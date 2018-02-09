@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.Data4Design</groupId>
-	<artifactId>webapp</artifactId>
+	<artifactId>myapp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>webapp</name>
+	<name>myapp</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
