@@ -13,3 +13,14 @@
         java -jar target/webapp-0.0.1-SNAPSHOT.jar
 	
 	navigate to localhost:8080/ in browser /welcome works too, just the controller
+
+	Will make a bash script that just runs it... maybe make the server dynamic and not from jar file
+
+== Creating Pages
+
+	Two Types of Controllers: 
+
+	Restful Controller: See WelcomeController.java
+
+	JSP Controller: See WelcomeControllerJsp.java
+			-- The JSP is in src/main/resources/WEB-INF/jsp
