@@ -8,6 +8,8 @@
 
     From Data4Design/webapp:
 
-        mvn clean project
+        mvn clean package
 
         java -jar target/webapp-0.0.1-SNAPSHOT.jar
+	
+	navigate to localhost:8080/ in browser /welcome works too, just the controller
