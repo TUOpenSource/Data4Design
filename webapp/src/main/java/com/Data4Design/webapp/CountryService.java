@@ -1,25 +1,21 @@
 package com.Data4Design.webapp;
-/**
- * Implementation of ICountryService
- * @author HHCD
- *
- */
+
+//import java.util.List;
+import java.util.ArrayList;
 
 public class CountryService implements ICountryService {
 
-	private CountryParser jsonParser;
+	private ICountryService iCountryService;
+	private IFileReader iFileReader;
+	
+	public CountryService(ICountryService iCountryService) {
+		this.iCountryService = iCountryService;
+	}
 	
 	@Override
-	public Country[] getCountries() {
+	public ArrayList<String> getCountries() {
 		// TODO Auto-generated method stub
-		Country[] countryList = jsonParser.parseFile("filename");
-		return countryList;
-	}
-
-	@Override
-	public Country[] getCountries(String str) {
-		// TODO Auto-generated method stub
-		Country[] countryList = jsonParser.parseFile("filename", str);
+		ArrayList<String> countryList = iFileReader.readFile("countries.txt");
 		return countryList;
 	}
 	
