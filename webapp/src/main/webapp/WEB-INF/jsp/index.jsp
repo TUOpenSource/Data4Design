@@ -12,7 +12,7 @@
     <link href="${jstlCss}" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
 
-    <title>Signin Template for Bootstrap</title>
+    <title>Hardware Human-Centered Design</title>
 
     <!-- Bootstrap core CSS -->
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -21,13 +21,6 @@
   </head>
   <body class="">
     <div class="container justify-content-center">
-        <div class="row text-center justify-content-center">
-            <div class="jumbotron justify-content-center">
-                <h3 class ="">Message: ${message}</h3>
-                </br>
-                <h3 class = "">This is the JSP </h3>
-            </div>
-        </div>
         <div class="row text-center">
             <form class="form-signin justify-content-center">
               <label for="inputEmail" class="sr-only">Select Country</label>
@@ -47,7 +40,7 @@
             </select>
           </div>    
               <button class="btn btn-lg btn-primary btn-block" type="submit">Search</button>
-              <p class="mt-5 mb-3 text-muted">© 2017-2018</p>
+              <p class="mt-5 mb-3 text-muted">&copy; 2018</p>
             </form>
         </div>
     </div>
