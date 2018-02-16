@@ -9,17 +9,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Value;
 
-@RestController
-public class WelcomeController {
+@Controller
+public class IndexController {
 
     // inject via application.properties
-    @Value("${welcome.message:test}")
+    @Value("${index.message:test}")
     private String message = "Hello World";
 
-    @RequestMapping("/welcome")
-    public String welcome(Map<String, Object> model) {
+    @RequestMapping("/")
+    public String index(Map<String, Object> model) {
         model.put("message", this.message);
-        return "welcome";
+        //This chooses the jsp to grab
+        return "index";
     }
 
 }
