@@ -5,11 +5,10 @@ package com.Data4Design.webapp;
 
 public class CountryLookupService implements ICountryLookupService{
 	
-	private ICountryLookupService iCountryLookupService;
 	
-	public CountryLookupService(ICountryLookupService iCountryLookupService) 
+	public CountryLookupService() 
 	{
-		this.iCountryLookupService = iCountryLookupService;
+		
 	}
 
 	@Override

@@ -7,10 +7,9 @@ import java.util.ArrayList;
 
 public class FileReader implements IFileReader{
 	
-	private IFileReader iFileReader;
 	
-	public FileReader(IFileReader iFileReader) {
-		this.iFileReader = iFileReader;
+	public FileReader() {
+		
 	}
 	
 	@Override
