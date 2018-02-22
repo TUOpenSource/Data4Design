@@ -23,6 +23,7 @@ public class FileReader implements IFileReader{
 			while(scan.hasNextLine()) {
 				 name = scan.nextLine();
 				 newList.add(name);
+			scan.close();
 			}
 			
 		}
