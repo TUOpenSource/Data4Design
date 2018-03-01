@@ -33,6 +33,21 @@
 			<version>3.3.7</version>
 		</dependency>
 		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>bootstrap-datepicker</artifactId>
+		    <version>1.0.1</version>
+		</dependency>
+
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>jquery</artifactId>
+		    <version>1.9.1</version>
+		</dependency>
+		<dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
