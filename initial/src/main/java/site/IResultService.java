@@ -1,9 +1,7 @@
 package site;
 
 public interface IResultService {
-   
-	Result getResult(String country);
-   
-   
-   
+    int getId();
+	Result getResult();
+     
 }

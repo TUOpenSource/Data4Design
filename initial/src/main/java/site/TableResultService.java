@@ -3,7 +3,13 @@ package site;
 public class TableResultService implements IResultService {
 
 	
-	public Result getResult(String country) {
+	public Result getResult() {
 		return new TableResult();
 	}
+
+	public int getId() {
+		return 5;
+	}
+
+	
 }

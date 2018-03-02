@@ -2,13 +2,19 @@ package site;
 
 public class NumberResultService implements IResultService {
 
-	int data;
+	
 	
 	NumberResultService(){
 		
 	}
 	
-	Result getResult(String country) {
-		data = collect()
+	public Result getResult(){
+		return new NumberResult();
+	}
+	
+	public int getId() {
+		return 6;
 	}
 }
+
+
