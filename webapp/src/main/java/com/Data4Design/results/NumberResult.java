@@ -3,7 +3,7 @@ package com.Data4Design.results;
 
 public class NumberResult extends Result{
 	
-	int data;
+	private int data;
 	public NumberResult() {
 		
 	}

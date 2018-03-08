@@ -3,12 +3,12 @@ package com.Data4Design.results;
 
 public class TableResult extends Result{
     
-	String [][] data;
+	private String [][] data;
 	TableResult(){
 		
 	}
 	
-	String [][] fetchData(String api) {
+	String [][] getData(String api) {
 		//data = fillTable(api);
 		return data;
 	}
