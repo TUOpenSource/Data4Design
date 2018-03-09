@@ -15,9 +15,9 @@ public class ResultsService implements IResultsService {
 	}
 	
 	public Result [] GetResults(int [] ids) {
-		
-		ArrayList<String> params = new ArrayList<String>(Arrays.asList(ids));
-		
+		//Needs a Fixin
+		//ArrayList<String> params = new ArrayList<String>(Arrays.asList(ids));
+		return new Result [0] ;
 
 	}
 }
