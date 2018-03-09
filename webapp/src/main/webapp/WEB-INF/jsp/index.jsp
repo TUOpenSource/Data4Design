@@ -25,24 +25,7 @@
             <form class="form-signin justify-content-center">
               <label for="inputEmail" class="sr-only">Select Country</label>
           <p>Please select a country for which you would like data</p>
-          <div class="form-group">
-            <select class="form-control" id="exampleFormControlSelect1" style="padding:0">
-              <option>United States</option>
-              <option>United Kingdom</option>
-              <option>Canada</option>
-              <option>Mexico</option>
-            </select>
-            <select class="form-control" id="exampleFormControlSelect1" style="padding:0">
-              <option>Tulsa</option>
-              <option>Collinsville</option>
-              <option>Broken Arrow</option>
-              <option>Sapulpa</option>
-            </select>
-          </div>    
-              <button class="btn btn-lg btn-primary btn-block" type="submit">Search</button>
-              <p class="mt-5 mb-3 text-muted">&copy; 2018</p>
-            </form>
-        </div>
+         
     </div>
     <script type="text/javascript" src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </body>
