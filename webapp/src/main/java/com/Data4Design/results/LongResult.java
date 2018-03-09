@@ -6,7 +6,7 @@ public class LongResult extends Result{
     private long data;
 
     public LongResult(long input) {
-        this.data = (double)input;
+        this.data = input;
     }
     
     public long fetchData() {
