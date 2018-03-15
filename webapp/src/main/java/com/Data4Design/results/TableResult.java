@@ -8,7 +8,7 @@ public class TableResult extends Result{
 		
 	}
 	
-	String [][] getData(String api) {
+	String [][] getData() {
 		//data = fillTable(api);
 		return data;
 	}
