@@ -12,7 +12,7 @@ public class NumberResult extends Result{
 		this.data = (double)input;
 	}
 	
-	public double fetchData() {
+	public double getData() {
 		return data;
 	}
 	
