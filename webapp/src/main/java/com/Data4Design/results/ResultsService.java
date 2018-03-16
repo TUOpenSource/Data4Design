@@ -16,8 +16,7 @@ public class ResultsService implements IResultsService {
 	}
 	
 	public Result [] GetResults(int [] ids) {
-		//Needs a Fixin
-		return new Result [0] ;
+
 		ArrayList<Integer> list = new ArrayList<Integer>();
 		
 		for(int el : ids ) {
