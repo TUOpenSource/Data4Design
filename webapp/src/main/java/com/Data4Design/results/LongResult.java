@@ -20,5 +20,9 @@ public class LongResult extends Result{
     public void setData(long input) {
         this.data = input;
     }
+
+    public String toString() {
+        return String.valueOf(this.data);
+    }
     
 }

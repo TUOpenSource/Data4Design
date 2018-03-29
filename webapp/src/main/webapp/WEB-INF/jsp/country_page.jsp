@@ -21,7 +21,9 @@
   </head>
   <body class="">
     <div id="c_code">Country Code: ${country_code}</div>
+    <br />
     <div id="electricity_num">Electricity Usage: ${electricity_usage}</div>
+    <br />
     <div id="population_num">Population: ${population}</div>
   </body>
 </html>
