@@ -12,5 +12,10 @@ public class CountryPopulationServiceTest {
 		test.getPopulation("usa");
 	}
 
+	@Test
+	public void testGetPopulationBolivia() {
+		CountryPopulationService test = new CountryPopulationService();
+		test.getPopulation("bol");
+	}
 }
 
