@@ -7,11 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    
+    <script src="/js/node_modules/jquery/dist/jquery.min.js"></script>
     <link rel="icon" href="../../../../favicon.ico">
     <c:url value="/css/bootstrap.css" var="jstlCss" />
     <link href="${jstlCss}" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
-
+    
     <title>Hardware Human-Centered Design</title>
 
     <!-- Bootstrap core CSS -->
