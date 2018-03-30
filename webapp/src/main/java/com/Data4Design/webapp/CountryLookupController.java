@@ -27,13 +27,18 @@ public class CountryLookupController {
     public String country_page(Map<String, Object> model, @PathVariable String id) {
         //String Cheese if you please
         String str_id = String.valueOf(id);
+        MapService mapService = new MapService();
+        
+        
         ElectricityUsageService electricity_service = new ElectricityUsageService();
         LongResult electricity_usage = electricity_service.getElectricityUsage(str_id);
         CountryPopulationService population_service = new CountryPopulationService();
         LongResult population = population_service.getPopulation(str_id);
+        model.put("map",mapService.getMap(str_id));
         model.put("electricity_usage", electricity_usage.toString());
         model.put("population", population.toString());
         model.put("country_code", str_id);
+        
         //This chooses the jsp to grab
         return "country_page";
     }
