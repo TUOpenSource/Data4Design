@@ -11,6 +11,10 @@ public class NumberResult extends Result{
 	public NumberResult(long input) {
 		this.data = (double)input;
 	}
+
+	public NumberResult(double input) {
+		this.data = input;
+	}
 	
 	public double getData() {
 		return data;

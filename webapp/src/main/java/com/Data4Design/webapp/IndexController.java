@@ -8,18 +8,19 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Value;
+import com.Data4Design.services.*;
 
 @Controller
 public class IndexController {
 
-    // inject via application.properties
-    @Value("${index.message:test}")
-    private String message = "Hello World";
 
     @RequestMapping("/")
     public String index(Map<String, Object> model) {
-        model.put("message", this.message);
-        //This chooses the jsp to grab
+        CountryListService country_list_service = new CountryListService();
+        String country_list = country_list_service.getCountryListString();
+
+        model.put("country_list", country_list);
+        
         return "index";
     }
 

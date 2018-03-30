@@ -10,19 +10,112 @@
     
     <script src="/js/node_modules/jquery/dist/jquery.min.js"></script>
     <script src="/js/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <link href="/js/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!--<link href="/js/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />-->
     <link rel="icon" href="../../../../favicon.ico">
+
+
+    <!-- Custom styles for this template -->
+    <link href="/css/startbootstrap-portfolio-item-gh-pages/css/portfolio-item.css" rel="stylesheet"> 
+
+    <!-- Bootswatch for color -->
+    <link href="/js/node_modules/bootswatch/dist/yeti/bootstrap.min.css" rel="stylesheet">
     
-    <title>Hardware Human-Centered Design</title>
+    <title>HHCD - ${country_name}</title>
 
     
     
   </head>
   <body class="">
-    <div id="c_code">Country Code: ${country_code}</div>
-    <br />
-    <div id="electricity_num">Electricity Usage: ${electricity_usage}</div>
-    <br />
-    <div id="population_num">Population: ${population}</div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Data 4 Design</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="http://localhost:8080">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <!-- Country Name -->
+      <h1 class="my-4">${country_name}
+      </h1>
+
+      <!-- Item Row -->
+      <div class="row">
+        <!-- Country Map -->
+        <div class="col-md-8">
+          <img class="img-fluid" src="http://placehold.it/750x500" alt="">
+        </div>
+        <!-- Country Description -->
+        <div class="col-md-4">
+          <h3 class="my-3">Country Description</h3>
+          <p>${country_description}</p>
+          <h3 class="my-3">Supplementary Details</h3>
+          <ul>
+            <li>ISO 2 Code: ${country_code}</li>
+          </ul>
+        </div>
+
+      </div>
+      <!-- /.row -->
+
+      <!-- Statisitacal Information -->
+      <h3 class="my-4">Data:</h3>
+      <!-- First Data Row -->
+      <div class="row">
+
+        <div class="col-md-3 col-sm-6 mb-4">
+            <div id ="population-card" class="card" >
+              <div class="card-body">
+                <h5 class="card-title">Population </h5>
+                <p class="card-text">Country Wide Population: ${population}</p>
+              </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+            <div id ="example-card" class="card" >
+              <div class="card-body">
+                <h5 class="card-title">Example</h5>
+                <p class="card-text">Example</p>
+              </div>
+            </div>
+        </div>
+
+       <div class="col-md-3 col-sm-6 mb-4">
+            <div id ="electricity-usage-card" class="card" >
+              <div class="card-body">
+                <h5 class="card-title">Example</h5>
+                <p class="card-text">Example</p>
+              </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+            <div id ="electricity-usage-card" class="card" >
+              <div class="card-body">
+                <h5 class="card-title">Electricity Usage</h5>
+                <p class="card-text">Country Wide Average: ${electricity_usage}%</p>
+              </div>
+            </div>
+        </div>
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
   </body>
 </html>

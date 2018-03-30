@@ -34,6 +34,12 @@ public class CountryListService implements ICountryListService {
         return this.countrylist_obj;
     }
 
+    @Override
+    public String getCountryListString() {
+        //System.out.println(this.countrylist_obj);
+        return this.countrylist_str;
+    }
+
      @Override
     public String getCountryCode(String name) {
         for(Iterator iterator = this.countrylist_obj.keySet().iterator(); iterator.hasNext();) {

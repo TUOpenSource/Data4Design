@@ -29,15 +29,20 @@ public class CountryLookupController {
         String str_id = String.valueOf(id);
         MapService mapService = new MapService();
         
-        
+        //Me Getters YO Ho Yo HO
         ElectricityUsageService electricity_service = new ElectricityUsageService();
         LongResult electricity_usage = electricity_service.getElectricityUsage(str_id);
         CountryPopulationService population_service = new CountryPopulationService();
         LongResult population = population_service.getPopulation(str_id);
+        CountryListService country_list_service = new CountryListService();
+        String country_name = country_list_service.getCountryName(str_id);
+
+        //Me Setters Yee Har Yee Har
         model.put("map",mapService.getMap(str_id));
         model.put("electricity_usage", electricity_usage.toString());
         model.put("population", population.toString());
         model.put("country_code", str_id);
+        model.put("country_name", country_name);
         
         //This chooses the jsp to grab
         return "country_page";
