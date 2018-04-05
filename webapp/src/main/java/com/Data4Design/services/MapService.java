@@ -17,15 +17,32 @@ public class MapService implements IMapService{
 
 	
 	public StringResult getMap(String countryCode) {
-	
-		   //String countryName = CountryListService.getName(countryCode);
-		   String countryName = "Bolivia";
+	       CountryListService countryList = new CountryListService();
+		   String countryName = countryList.getCountryName(countryCode);
+		   String apiKey = "AIzaSyBwhOcDvZryXjm3ZSUxHHEHeRQflJH5ctc";
+
 	       String baseUrl = "https://maps.googleapis.com/maps/api/staticmap?center=";
 	       baseUrl+=countryName;
 	       baseUrl +="&zoom=6";
-	       baseUrl +="size=800x400";
+	       baseUrl +="&size=800x400";
+	       baseUrl += "&key=";
+	       baseUrl +=apiKey;
+	       
+	       try {
+	    	       URL url = new URL(baseUrl);
+	           HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+	           connection.setRequestMethod("GET");
+	           
+	    	   
+	       }
+	       
+	       catch(Exception e){
+	    	   System.out.print("Something went wrong");
+	    	   
+	       }
 	       StringResult mapSource = new StringResult();
 	       
+	       System.out.println(baseUrl);
 	        
 	        mapSource.setData(baseUrl);
 

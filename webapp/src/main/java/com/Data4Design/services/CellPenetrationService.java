@@ -12,7 +12,7 @@ public class CellPenetrationService implements ICellPenetrationService
 {
     public LongResult getCellPenetration(String countryName)
     {
-        LongResult cellpen = new LongResult();
+        LongResult cellpen= new LongResult();
         try
         {
 
@@ -27,7 +27,7 @@ public class CellPenetrationService implements ICellPenetrationService
             JSONObject communications = (JSONObject) dataObject.get("communications");
             JSONObject telephoneObject = (JSONObject) communications.get("telephones");
             JSONObject mobile = (JSONObject) telephoneObject.get("mobile_cellular");
-            cellPenetration = (LongResult) mobile.get("total");
+            cellPenetration = (long) mobile.get("total");
             reader.close();
         }
 

@@ -38,7 +38,7 @@ public class CountryLookupController {
         String country_name = country_list_service.getCountryName(str_id);
 
         //Me Setters Yee Har Yee Har
-        model.put("map",mapService.getMap(str_id));
+        model.put("map",mapService.getMap(str_id).getData());
         model.put("electricity_usage", electricity_usage.toString());
         model.put("population", population.toString());
         model.put("country_code", str_id);
