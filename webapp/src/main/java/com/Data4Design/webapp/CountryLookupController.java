@@ -38,16 +38,17 @@ public class CountryLookupController {
         LongResult population = population_service.getPopulation(str_id);
         CountryListService country_list_service = new CountryListService();
         String country_name = country_list_service.getCountryName(str_id);
-
+        String iso_3_str = country_list_service.toISO3(str_id);
         //Me Setters Yee Har Yee Har
-        String rainfall = String.format("%f", yearlyRainService.getAnnualPrecipitation(str_id).getData());
-        String temperature = String.format("%f",yearlyTempService.getAverageAnnualTemperature(str_id).getData());
+        String rainfall = String.format("%f", yearlyRainService.getAnnualPrecipitation(iso_3_str).getData());
+        String temperature = String.format("%f",yearlyTempService.getAverageAnnualTemperature(iso_3_str).getData());
         model.put("yearly_rainfall", rainfall);
         model.put("yearly_temperature",temperature);
         model.put("map",mapService.getMap(str_id).getData());
         model.put("electricity_usage", electricity_usage.toString());
         model.put("population", population.toString());
         model.put("country_code", str_id);
+        model.put("country_code_3", iso_3_str);
         model.put("country_name", country_name);
         
         //This chooses the jsp to grab

@@ -65,6 +65,7 @@
           <h3 class="my-3">Supplementary Details</h3>
           <ul>
             <li>ISO 2 Code: ${country_code}</li>
+            <li>ISO 3 Code: ${country_code_3}</li>
           </ul>
         </div>
 
@@ -97,8 +98,8 @@
        <div class="col-md-3 col-sm-6 mb-4">
             <div id ="electricity-usage-card" class="card" >
               <div class="card-body">
-                <h5 class="card-title">Example</h5>
-                <p class="card-text">Example</p>
+                <h5 class="card-title">Rainfall</h5>
+                <p class="card-text">${yearly_rainfall}</p>
               </div>
             </div>
         </div>
