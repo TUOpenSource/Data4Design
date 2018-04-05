@@ -56,7 +56,7 @@
       <div class="row">
         <!-- Country Map -->
         <div class="col-md-8">
-          <img class="img-fluid" src="http://placehold.it/750x500" alt="">
+          <img class="img-fluid" src= "${pageContext.request.contextPath}${map}" alt="">
         </div>
         <!-- Country Description -->
         <div class="col-md-4">
