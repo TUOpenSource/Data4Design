@@ -10,4 +10,5 @@ public interface ICountryListService {
     public String getCountryListString();
     public String getCountryCode(String name);
     public String getCountryName(String code);
+    public String toISO3(String iso2);
 }

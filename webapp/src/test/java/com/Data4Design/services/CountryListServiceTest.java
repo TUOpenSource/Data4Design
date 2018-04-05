@@ -32,8 +32,16 @@ public class CountryListServiceTest {
     public void testGetCountryListString() {
         CountryListService test = new CountryListService();
         String t = test.getCountryListString();
+        //System.out.println(t);   
+    }
+
+    @Test
+    public void testIso2To3() {
+        CountryListService test = new CountryListService();
+        String t = test.toISO3("BE");
         System.out.println(t);   
     }
+
 
 }
 
