@@ -5,7 +5,7 @@ import java.net.URL;
 import java.io.InputStreamReader;
 import java.io.BufferedReader;
 
-import com.Data4Design.results.LongResult;
+import com.Data4Design.results.NumberResult;
 
 import org.json.simple.JSONObject;
 import org.json.simple.JSONArray;
@@ -19,13 +19,13 @@ import org.json.simple.parser.JSONParser;
 public class ElectricityUsageService implements IElectricityUsageService {
     
     @Override
-    public LongResult getElectricityUsage(String countryCode) {
+    public NumberResult getElectricityUsage(String countryCode) {
         String dateParam = "date=2016:2016&format=json"; 
         //String uri = String.format("https://api.worldbank.org/v2/countries/%s/indicators/SP.POP.TOTL?%s", countryCode, dateParam);
         String uri = String.format("http://api.worldbank.org/v2/countries/%s/indicators/EG.ELC.ACCS.ZS?format=json&MRV=1", countryCode);
         JSONParser parser = new JSONParser();
-        LongResult electricityUsage = new LongResult();
-        long electricity = 0;
+        NumberResult electricityUsage = new NumberResult();
+        double electricity = 0;
         
         try {
         URL url = new URL(uri);
@@ -40,7 +40,7 @@ public class ElectricityUsageService implements IElectricityUsageService {
         //System.out.println(innerJsonArray);
         JSONObject finallyAnObject = (JSONObject) innerJsonArray.get(0);
         
-        electricity = (Long) finallyAnObject.get("value"); // need a Result to handle Longs!!!!!!!
+        electricity = (double) finallyAnObject.get("value"); // need a Result to handle Longs!!!!!!!
         System.out.println("Electricity Usage of "+countryCode+" = "+electricity);
         electricityUsage.setData(electricity);
         //NumberResult.data = population ---> how to pass values to results when there isn't a

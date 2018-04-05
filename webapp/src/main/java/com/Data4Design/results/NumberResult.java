@@ -19,5 +19,13 @@ public class NumberResult extends Result{
 	public double getData() {
 		return data;
 	}
+
+	public String toString() {
+        return String.valueOf(this.data);
+    }
+
+    public void setData(double input) {
+        this.data = input;
+    }
 	
 }

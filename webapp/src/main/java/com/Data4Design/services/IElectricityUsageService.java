@@ -1,8 +1,8 @@
 package com.Data4Design.services;
 
-import com.Data4Design.results.LongResult;
+import com.Data4Design.results.NumberResult;
 
 public interface IElectricityUsageService {
 
-    public LongResult getElectricityUsage(String countryCode);
+    public NumberResult getElectricityUsage(String countryCode);
 }

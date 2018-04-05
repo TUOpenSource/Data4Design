@@ -31,7 +31,7 @@ public class CountryLookupController {
         
         //Me Getters YO Ho Yo HO
         ElectricityUsageService electricity_service = new ElectricityUsageService();
-        LongResult electricity_usage = electricity_service.getElectricityUsage(str_id);
+        NumberResult electricity_usage = electricity_service.getElectricityUsage(str_id);
         CountryPopulationService population_service = new CountryPopulationService();
         AnnualPrecipitationService yearlyRainService = new AnnualPrecipitationService();
         AnnualTemperatureService yearlyTempService = new AnnualTemperatureService();
