@@ -10,11 +10,13 @@ import com.Data4Design.results.LongResult;
 
 public class CellPenetrationService implements ICellPenetrationService
 {
-    public LongResult getCellPenetration(String countryName)
+    public LongResult getCellPenetration(String countryCode)
     {
         LongResult cellpen= new LongResult();
         try
         {
+            CountryListService listService = new CountryListService();
+            String countryName = listService.getCountryName(countryCode);
             countryName = countryName.toLowerCase();
             JSONParser parser = new JSONParser();
             URL jsonFile = new URL("https://raw.githubusercontent.com/iancoleman/cia_world_factbook_api/master/data/2018-03-26_factbook.json");

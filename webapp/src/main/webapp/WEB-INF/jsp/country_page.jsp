@@ -88,8 +88,8 @@
         <div class="col-md-3 col-sm-6 mb-4">
             <div id ="example-card" class="card" >
               <div class="card-body">
-                <h5 class="card-title">Example</h5>
-                <p class="card-text">Example</p>
+                <h5 class="card-title">Cell Penetration</h5>
+                <p class="card-text">${cell_penetration}</p>
               </div>
             </div>
         </div>
