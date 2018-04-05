@@ -18,6 +18,7 @@ public class CellPenetrationService implements ICellPenetrationService
             CountryListService listService = new CountryListService();
             String countryName = listService.getCountryName(countryCode);
             countryName = countryName.toLowerCase();
+            countryName = countryName.replaceAll(" ", "_");
             JSONParser parser = new JSONParser();
             URL jsonFile = new URL("https://raw.githubusercontent.com/iancoleman/cia_world_factbook_api/master/data/2018-03-26_factbook.json");
             BufferedReader reader = new BufferedReader(new InputStreamReader(jsonFile.openStream()));
