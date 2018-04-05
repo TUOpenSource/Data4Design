@@ -33,12 +33,18 @@ public class CountryLookupController {
         ElectricityUsageService electricity_service = new ElectricityUsageService();
         LongResult electricity_usage = electricity_service.getElectricityUsage(str_id);
         CountryPopulationService population_service = new CountryPopulationService();
+        AnnualPrecipitationService yearlyRainService = new AnnualPrecipitationService();
+        AnnualTemperatureService yearlyTempService = new AnnualTemperatureService();
         LongResult population = population_service.getPopulation(str_id);
         CountryListService country_list_service = new CountryListService();
         String country_name = country_list_service.getCountryName(str_id);
 
         //Me Setters Yee Har Yee Har
-        model.put("map",mapService.getMap(str_id));
+        String rainfall = String.format("%f", yearlyRainService.getAnnualPrecipitation(str_id).getData());
+        String temperature = String.format("%f",yearlyTempService.getAverageAnnualTemperature(str_id).getData());
+        model.put("yearly_rainfall", rainfall);
+        model.put("yearly_temperature",temperature);
+        model.put("map",mapService.getMap(str_id).getData());
         model.put("electricity_usage", electricity_usage.toString());
         model.put("population", population.toString());
         model.put("country_code", str_id);

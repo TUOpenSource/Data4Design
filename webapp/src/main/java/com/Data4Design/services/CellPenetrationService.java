@@ -12,12 +12,12 @@ public class CellPenetrationService implements ICellPenetrationService
 {
     public LongResult getCellPenetration(String countryName)
     {
-        LongResult cellpen = new LongResult();
+        LongResult cellpen= new LongResult();
         try
         {
-
+            countryName = countryName.toLowerCase();
             JSONParser parser = new JSONParser();
-            URL jsonFile = new URL("https://raw.githubusercontent.com/iancoleman/cia_world_factbook_api/master/data/2018-02-26_factbook.json");
+            URL jsonFile = new URL("https://raw.githubusercontent.com/iancoleman/cia_world_factbook_api/master/data/2018-03-26_factbook.json");
             BufferedReader reader = new BufferedReader(new InputStreamReader(jsonFile.openStream()));
 
             JSONObject totalObject = (JSONObject) parser.parse(reader);
@@ -27,8 +27,7 @@ public class CellPenetrationService implements ICellPenetrationService
             JSONObject communications = (JSONObject) dataObject.get("communications");
             JSONObject telephoneObject = (JSONObject) communications.get("telephones");
             JSONObject mobile = (JSONObject) telephoneObject.get("mobile_cellular");
-            //cellPenetration = (LongResult) mobile.get("total");
-            cellPenetration = -1;
+            cellPenetration = (long) mobile.get("total");
             reader.close();
         }
 
