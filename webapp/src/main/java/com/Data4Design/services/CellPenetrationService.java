@@ -15,9 +15,9 @@ public class CellPenetrationService implements ICellPenetrationService
         LongResult cellpen= new LongResult();
         try
         {
-
+            countryName = countryName.toLowerCase();
             JSONParser parser = new JSONParser();
-            URL jsonFile = new URL("https://raw.githubusercontent.com/iancoleman/cia_world_factbook_api/master/data/2018-02-26_factbook.json");
+            URL jsonFile = new URL("https://raw.githubusercontent.com/iancoleman/cia_world_factbook_api/master/data/2018-03-26_factbook.json");
             BufferedReader reader = new BufferedReader(new InputStreamReader(jsonFile.openStream()));
 
             JSONObject totalObject = (JSONObject) parser.parse(reader);
