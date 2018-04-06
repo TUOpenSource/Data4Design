@@ -13,7 +13,7 @@ public class LongResult extends Result{
         this.data = input;
     }
     
-    public long fetchData() {
+    public long getData() {
         return data;
     }
 

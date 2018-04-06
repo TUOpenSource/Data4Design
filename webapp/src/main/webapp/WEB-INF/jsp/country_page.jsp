@@ -128,34 +128,6 @@
             </div>
         </div>
 
-        <div class="col-md-3 col-sm-6 mb-4">
-            <div id ="example-card" class="card" >
-              <div class="card-body">
-                <h5 class="card-title">Insert Here</h5>
-                <p class="card-text">Insert Here</p>
-              </div>
-            </div>
-        </div>
-
-       <div class="col-md-3 col-sm-6 mb-4">
-            <div id ="electricity-usage-card" class="card" >
-              <div class="card-body">
-                <h5 class="card-title">Insert Here</h5>
-                <p class="card-text">Insert Here</p>
-              </div>
-            </div>
-        </div>
-
-        <div class="col-md-3 col-sm-6 mb-4">
-            <div id ="electricity-usage-card" class="card" >
-              <div class="card-body">
-                <h5 class="card-title">Insert Here</h5>
-                <p class="card-text">Insret Here</p>
-              </div>
-            </div>
-        </div>
-
-      </div>
       <!-- /.row -->
 
     </div>
