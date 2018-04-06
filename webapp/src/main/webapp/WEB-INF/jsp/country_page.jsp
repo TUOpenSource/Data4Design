@@ -99,7 +99,7 @@
             <div id ="electricity-usage-card" class="card" >
               <div class="card-body">
                 <h5 class="card-title">Rainfall</h5>
-                <p class="card-text">${yearly_rainfall}</p>
+                <p class="card-text">${yearly_rainfall} mm</p>
               </div>
             </div>
         </div>
@@ -123,7 +123,7 @@
             <div id ="population-card" class="card" >
               <div class="card-body">
                 <h5 class="card-title">Temperature </h5>
-                <p class="card-text">${yearly_temperature}</p>
+                <p class="card-text">${yearly_temperature}&#8451;</p>
               </div>
             </div>
         </div>
