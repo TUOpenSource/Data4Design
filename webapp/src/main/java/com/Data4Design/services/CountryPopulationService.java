@@ -47,7 +47,7 @@ public class CountryPopulationService implements ICountryPopulationService {
 			System.out.println("ERROR: "+e);
 		}
 		LongResult countryPopulation = new LongResult(population);
-		System.out.println("Population of "+countryCode+" = "+countryPopulation.fetchData());
+		System.out.println("Population of "+countryCode+" = "+countryPopulation.getData());
 		return countryPopulation;
 	}
 
