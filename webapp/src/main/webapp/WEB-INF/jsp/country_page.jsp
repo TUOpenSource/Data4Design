@@ -98,7 +98,7 @@
        <div class="col-md-3 col-sm-6 mb-4">
             <div id ="electricity-usage-card" class="card" >
               <div class="card-body">
-                <h5 class="card-title">Rainfall</h5>
+                <h5 class="card-title">Average Yearly Rainfall</h5>
                 <p class="card-text">${yearly_rainfall} mm</p>
               </div>
             </div>
