@@ -90,7 +90,7 @@
             <div id ="example-card" class="card" >
               <div class="card-body">
                 <h5 class="card-title">Cell Penetration</h5>
-                <p class="card-text">${cell_penetration}</p>
+                <p class="card-text">${cell_penetration} cell phones</p>
               </div>
             </div>
         </div>
