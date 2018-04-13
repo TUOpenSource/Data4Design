@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<style>
+       #map {
+        height: 400px;
+        width: 800px;
+       }
+</style>
 <html lang="en">
   <head>
     <meta charset="utf-8">
