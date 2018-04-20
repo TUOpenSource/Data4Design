@@ -114,6 +114,7 @@ video {
         <h2 class="select-title">Please Select a Country</h2>
         <div class ="center">
           <select style="margin-left: 20px;" class="form-control" id="country_select" onchange="redirect(this);">
+          	<option value="" selected disabled hidden>Please select a country</option>
           </select>
         </div>
       </div>

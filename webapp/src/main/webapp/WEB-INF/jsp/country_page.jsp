@@ -95,8 +95,8 @@
         <div class="col-md-3 col-sm-6 mb-4">
             <div id ="example-card" class="card" >
               <div class="card-body">
-                <h5 class="card-title">Cell Penetration</h5>
-                <p class="card-text">${cell_penetration}</p>
+                <h5 class="card-title">Mobile Phone Usage</h5>
+                <p class="card-text">${cell_penetration} cell phones</p>
               </div>
             </div>
         </div>
@@ -104,8 +104,8 @@
        <div class="col-md-3 col-sm-6 mb-4">
             <div id ="electricity-usage-card" class="card" >
               <div class="card-body">
-                <h5 class="card-title">Rainfall</h5>
-                <p class="card-text">${yearly_rainfall}</p>
+                <h5 class="card-title">Average Yearly Rainfall</h5>
+                <p class="card-text">${yearly_rainfall} mm</p>
               </div>
             </div>
         </div>
@@ -128,40 +128,12 @@
         <div class="col-md-3 col-sm-6 mb-4">
             <div id ="population-card" class="card" >
               <div class="card-body">
-                <h5 class="card-title">Temperature </h5>
-                <p class="card-text">${yearly_temperature}</p>
+                <h5 class="card-title">Average Yearly Temperature </h5>
+                <p class="card-text">${yearly_temperature}&#8451;</p>
               </div>
             </div>
         </div>
 
-        <div class="col-md-3 col-sm-6 mb-4">
-            <div id ="example-card" class="card" >
-              <div class="card-body">
-                <h5 class="card-title">Insert Here</h5>
-                <p class="card-text">Insert Here</p>
-              </div>
-            </div>
-        </div>
-
-       <div class="col-md-3 col-sm-6 mb-4">
-            <div id ="electricity-usage-card" class="card" >
-              <div class="card-body">
-                <h5 class="card-title">Insert Here</h5>
-                <p class="card-text">Insert Here</p>
-              </div>
-            </div>
-        </div>
-
-        <div class="col-md-3 col-sm-6 mb-4">
-            <div id ="electricity-usage-card" class="card" >
-              <div class="card-body">
-                <h5 class="card-title">Insert Here</h5>
-                <p class="card-text">Insret Here</p>
-              </div>
-            </div>
-        </div>
-
-      </div>
       <!-- /.row -->
 
     </div>
