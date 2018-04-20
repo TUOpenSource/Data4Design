@@ -93,7 +93,7 @@
         </div>
 
         <div class="col-md-3 col-sm-6 mb-4">
-            <div id ="example-card" class="card" >
+            <div id ="cell-usage-card" class="card" >
               <div class="card-body">
                 <h5 class="card-title">Mobile Phone Usage</h5>
                 <p class="card-text">${cell_penetration} cell phones</p>
@@ -120,13 +120,22 @@
         </div>
 
       </div>
+
+      <div class="col-md-3 col-sm-6 mb-4">
+        <div id ="natural-resources-card" class="card" >
+          <div class="card-body">
+            <h5 class="card-title">Natural Resources</h5>
+            <p class="card-text">${natural_resources}</p>
+          </div>
+        </div>
+      </div>
       <!-- /.row -->
 
       <!-- First Data Row -->
       <div class="row">
 
         <div class="col-md-3 col-sm-6 mb-4">
-            <div id ="population-card" class="card" >
+            <div id ="yearly-temperature-card" class="card" >
               <div class="card-body">
                 <h5 class="card-title">Average Yearly Temperature </h5>
                 <p class="card-text">${yearly_temperature}&#8451;</p>
