@@ -38,9 +38,11 @@ public class CountryLookupController {
         AnnualTemperatureService yearlyTempService = new AnnualTemperatureService();
         LongResult population = population_service.getPopulation(str_id);
         CountryListService country_list_service = new CountryListService();
+        NaturalResourceService naturalResourceService = new NaturalResourceService();
         String country_name = country_list_service.getCountryName(str_id);
         String iso_3_str = country_list_service.toISO3(str_id);
         String cellpen = String.format("%d", cell_penetration.getCellPenetration(str_id).getData());
+        String natural_resources = naturalResourceService.getNaturalResources(str_id).getData();
         //Me Setters Yee Har Yee Har
         String rainfall = String.format("%f", yearlyRainService.getAnnualPrecipitation(iso_3_str).getData());
         String temperature = String.format("%f",yearlyTempService.getAverageAnnualTemperature(iso_3_str).getData());
@@ -53,6 +55,7 @@ public class CountryLookupController {
         model.put("country_code", str_id);
         model.put("country_code_3", iso_3_str);
         model.put("country_name", country_name);
+        model.put("natural_resources", natural_resources);
         
         //This chooses the jsp to grab
         return "country_page";

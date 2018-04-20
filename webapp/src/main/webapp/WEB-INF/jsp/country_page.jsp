@@ -120,15 +120,6 @@
         </div>
 
       </div>
-
-      <div class="col-md-3 col-sm-6 mb-4">
-        <div id ="natural-resources-card" class="card" >
-          <div class="card-body">
-            <h5 class="card-title">Natural Resources</h5>
-            <p class="card-text">${natural_resources}</p>
-          </div>
-        </div>
-      </div>
       <!-- /.row -->
 
       <!-- First Data Row -->
@@ -141,6 +132,15 @@
                 <p class="card-text">${yearly_temperature}&#8451;</p>
               </div>
             </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+          <div id ="natural-resources-card" class="card" >
+            <div class="card-body">
+              <h5 class="card-title">Natural Resources</h5>
+              <p class="card-text">${natural_resources}</p>
+            </div>
+          </div>
         </div>
 
       <!-- /.row -->
