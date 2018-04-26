@@ -8,7 +8,7 @@ Data 4 Design is intended to assist designers and makers of physical hardware th
 
 The source code in this repository permits the user to establish their own stand-along copy of the Data 4 Design web application. It has been built using Spring Boot.
 
-###Quick Start
+### Quick Start
 To begin, simply clone the repository.
 
 ``` git clone  https://github.com/TUOpenSource/Data4Design.git```
@@ -17,4 +17,5 @@ Next, make sure Maven is downloaded and then run this command:
 
 ``` mvn spring-boot:run ```
 
-The application will build and begin serving. Navigate to localhost:8080
+The application will build and begin serving. 
+```Navigate to localhost:8080```
