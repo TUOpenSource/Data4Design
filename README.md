@@ -11,8 +11,7 @@ The source code in this repository permits the user to establish their own stand
 ###Quick Start
 To begin, simply clone the repository.
 
-``` git clone  https://github.com/TUOpenSource/Data4Design.git
-```
+``` git clone  https://github.com/TUOpenSource/Data4Design.git```
 
 Next, make sure Maven is downloaded and then run this command:
 
