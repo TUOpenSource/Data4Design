@@ -18,4 +18,4 @@ Next, make sure Maven is downloaded and then run this command:
 ``` mvn spring-boot:run ```
 
 The application will build and begin serving. 
-```Navigate to localhost:8080```
+```Navigate to http://localhost:808```

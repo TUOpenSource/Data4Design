@@ -136,7 +136,7 @@ $("video").prop("volume", 0);
 
 //Get Countries
 var countryArray = JSON.parse('${country_list}');
-console.log(countryArray);
+//console.log(countryArray);
 $.each(countryArray, function(key,value) {
   $('#country_select').append("<option value=\""+key+"\"><a href=\"/country/"+key+"\">"+value+"</a></option>");
 });
