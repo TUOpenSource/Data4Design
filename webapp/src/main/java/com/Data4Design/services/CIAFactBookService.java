@@ -17,7 +17,7 @@ public class CIAFactBookService implements ICIAFactBookService
         try
         {
             JSONParser parser = new JSONParser();
-            URL jsonFile = new URL("https://raw.githubusercontent.com/iancoleman/cia_world_factbook_api/master/data/2018-03-26_factbook.json");
+            URL jsonFile = new URL("https://raw.githubusercontent.com/iancoleman/cia_world_factbook_api/master/data/2018-04-30_factbook.json");
             BufferedReader reader = new BufferedReader(new InputStreamReader(jsonFile.openStream()));
 
             totalObject = (JSONObject) parser.parse(reader);
