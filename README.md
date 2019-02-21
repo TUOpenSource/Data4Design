@@ -13,9 +13,10 @@ To begin, simply clone the repository.
 
 ``` git clone  https://github.com/TUOpenSource/Data4Design.git```
 
-Next, make sure Maven is downloaded and then run this command:
+The service is locally hosted with Apache Tomcat, so ensure Tomcat is downloaded, but do not run the service. This is handled automatically when the application builds. 
 
+Next, make sure Maven is downloaded (Java 1.8.XX is required), navigate to the "webapp" directory (should contain the "pom.xml" file) and then run this command:
 ``` mvn spring-boot:run ```
 
-The application will build and begin serving. 
-```Navigate to http://localhost:808```
+The application will build, automatically initiates Tomcat, and begin serving. 
+```Navigate to http://localhost:8080```
