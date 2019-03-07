@@ -96,7 +96,7 @@
             <div id ="cell-usage-card" class="card" >
               <div class="card-body">
                 <h5 class="card-title">Mobile Phone Usage</h5>
-                <p class="card-text">${cell_penetration} cell phones</p>
+                <p class="card-text">${cell_penetration} cell phones per 100 people</p>
               </div>
             </div>
         </div>
