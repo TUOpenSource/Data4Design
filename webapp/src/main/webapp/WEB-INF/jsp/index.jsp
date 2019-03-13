@@ -87,7 +87,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Data 4 Design</a>
+      <a class="navbar-brand" href="/">Data 4 Design</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
         aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -117,7 +117,7 @@
     <div style="padding-top: 10%">
       <div style="text-align: center">
         <h1>Data4Design</h1>
-        <h3>Our goal is to provide you with resources to jump start your humanitarian project.</h3>
+        <h3>The goal of <i>Data4Design</i> is to provide you with resources to jump start your humanitarian project.</h3>
         <br>
         <h5 class="select-title" style="color:black; text-align: center">To get started, please select a country for
           your project</h5>
