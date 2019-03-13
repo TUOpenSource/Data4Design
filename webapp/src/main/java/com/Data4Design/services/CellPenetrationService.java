@@ -17,7 +17,7 @@ public class CellPenetrationService implements ICellPenetrationService
             JSONObject communications = (JSONObject) dataObject.get("communications");
             JSONObject telephoneObject = (JSONObject) communications.get("telephones");
             JSONObject mobile = (JSONObject) telephoneObject.get("mobile_cellular");
-            cellPenetration = (long) mobile.get("total");
+            cellPenetration = (long) mobile.get("subscriptions_per_one_hundred_inhabitants");
         }
 
         catch(NullPointerException e)

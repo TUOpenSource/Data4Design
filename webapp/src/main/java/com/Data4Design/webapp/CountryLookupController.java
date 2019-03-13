@@ -36,6 +36,7 @@ public class CountryLookupController {
     @RequestMapping(value="/{id}", method = RequestMethod.GET)
     //@ResponseBody
     public String country_page(Map<String, Object> model, @PathVariable String id) {
+    	
     	/*CountryInfo countryInfo = new CountryInfo();
     	String str_id = String.valueOf(id);
     	CountryListService country_list_service = new CountryListService();
@@ -95,6 +96,7 @@ public class CountryLookupController {
         //Me Setters Yee Har Yee Har
         String rainfall = yearlyRainService.GetCountryInfoItem(iso_3_str).getValue();
         String temperature = yearlyTempService.GetCountryInfoItem(iso_3_str).Value;
+        String country_list = country_list_service.getCountryListString();
         model.put("yearly_rainfall", rainfall);
         model.put("yearly_temperature",temperature);
         model.put("map",mapService.getMap(str_id).getData());
@@ -105,6 +107,11 @@ public class CountryLookupController {
         model.put("country_code_3", iso_3_str);
         model.put("country_name", country_name);
         model.put("natural_resources", natural_resources);
+
+        
+        
+
+        model.put("country_list", country_list);
         
         //This chooses the jsp to grab
         return "country_page";
