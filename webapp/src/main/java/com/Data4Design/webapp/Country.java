@@ -5,6 +5,7 @@ public class Country {
 	private String country;
 	private String id;
 	private int population; 		// population provided by World Bank API
+	
 	// add more attributes
 	
 	public Country() {}
