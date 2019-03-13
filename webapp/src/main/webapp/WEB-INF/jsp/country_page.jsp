@@ -61,8 +61,22 @@
       <!-- Item Row -->
       <div class="row">
         <!-- Country Map -->
-        <div class="col-md-8">
+        <!-- <div class="col-md-8">
           <img class="img-fluid" src= "${pageContext.request.contextPath}${map}" alt="">
+        </div> -->
+        <!-- Interactive Country Map using Javascript API-->
+        <div id = "map">
+          <script>
+            var map;
+            function initMap() {
+              map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: 0.00, lng: 0.00},
+                zoom: 8
+              });
+            }
+          </script>
+          <script src= "https://maps.googleapis.com/maps/api/js?key=AIzaSyCsMooQ7FQpjCIOHZ2bEiX61z1DFV6UBhI&callback=initMap"
+          async defer></script>
         </div>
         <!-- Country Description -->
         <div class="col-md-4">

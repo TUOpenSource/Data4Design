@@ -19,7 +19,7 @@ public class MapService implements IMapService{
 	public StringResult getMap(String countryCode) {
 	       CountryListService countryList = new CountryListService();
 		   String countryName = countryList.getCountryName(countryCode);
-		   String apiKey = "AIzaSyBwhOcDvZryXjm3ZSUxHHEHeRQflJH5ctc";
+		   String apiKey = "AIzaSyCsMooQ7FQpjCIOHZ2bEiX61z1DFV6UBhI";//new api key generated. Expires after 12 months.
 
 	       String baseUrl = "https://maps.googleapis.com/maps/api/staticmap?center=";
 	       baseUrl+=countryName;
