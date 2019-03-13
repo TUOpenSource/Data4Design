@@ -1,16 +1,16 @@
 package com.Data4Design.services;
 
 import org.json.simple.JSONObject;
-import com.Data4Design.results.LongResult;
+import com.Data4Design.results.NumberResult;
 
 /**
  * Makes a call to the CIA World Factbook and returns the value of the total electrification of the country.
  */
-public class ElectricityUsageService implements ICIAFactBookService {
+public class ElectricityUsageService implements IElectricityUsageService {
     
-	 public LongResult getTotalElectricityUsage(String countryCode)
+	 public NumberResult getElectricityUsage(String countryCode)
 	    {
-	        LongResult elecUse= new LongResult();
+	        NumberResult elecUse= new NumberResult();
 
 	        CIAFactBookService factBook = new CIAFactBookService();
 	        JSONObject country = factBook.getCIAFactBookCountryObject(countryCode);
@@ -27,7 +27,7 @@ public class ElectricityUsageService implements ICIAFactBookService {
 	        catch(NullPointerException e)
 	        {
 	            System.out.println("Data not available.");
-	            electricityUsage = -1;
+	            electricityUsage = 0;
 	        }
 
 	        elecUse.setData(electricityUsage);
