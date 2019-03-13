@@ -49,7 +49,7 @@ public class CountryLookupController {
         String country_list = country_list_service.getCountryListString();
         model.put("yearly_rainfall", rainfall);
         model.put("yearly_temperature",temperature);
-        model.put("map",mapService.getMap(str_id).getData());
+        model.put("baseUrl",mapService.getMap(str_id).getData());
         model.put("electricity_usage", electricity_usage.toString());
         model.put("population", population.toString());
         model.put("cell_penetration", cellpen);

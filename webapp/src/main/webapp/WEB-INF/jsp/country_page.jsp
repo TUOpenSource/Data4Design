@@ -26,6 +26,9 @@
   <!--<link href="/js/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />-->
   <link rel="icon" href="../../../../favicon.ico">
 
+  <script src="${baseUrl}"
+    async defer></script>
+
 
   <!-- Custom styles for this template -->
   <link href="/css/startbootstrap-portfolio-item-gh-pages/css/portfolio-item.css" rel="stylesheet">
@@ -77,117 +80,132 @@
       <!-- Country Name -->
       <div style="display:block" class="header col-md-8 order-md-1">
         <span>
-          <h1 class="my-4" style="display: inline">${country_name} <h5 style="display:inline">(${country_code} /
+          <h1 id="country-name" class="my-4" style="display: inline">${country_name} <h5 style="display:inline">
+              (${country_code} /
               ${country_code_3})</h5>
           </h1>
         </span>
-        <!-- <span><h5 style="display:inline">(${country_code} / ${country_code_3})</h5></span> -->
       </div>
 
     </div>
-
     <!-- Item Row -->
-    <div class="row" style="padding-bottom: 10px">
-      <!-- Country Map -->
-      <div class="col-md-8">
-        <img class="img-fluid" src="${pageContext.request.contextPath}${map}" alt="">
-      </div>
-      <!-- Country Description -->
-      <div class="col-md-4">
-        <!-- <h3 class="my-3">Country Description</h3>
-          <p>${country_description}</p> -->
-        <h3 class="my-3">Supplementary Details</h3>
-        <ul>
-          <li><i class="fas fa-thermometer-half"></i> Average yearly temperature: ${yearly_temperature} mm</li>
-          <li><i class="fas fa-tint"></i> Average yearly rainfall: ${yearly_rainfall} mm</li>
-        </ul>
-      </div>
-
-    </div>
-    <!-- /.row -->
-
-    <!-- Statisitacal Information -->
-    <!-- <h3 class="my-4">Data:</h3> -->
-    <!-- First Data Row -->
     <div class="row">
+      <!-- Interactive Country Map using Javascript API-->
+      <div id="map"></div>
 
-      <div class="col-md-3 col-sm-6 mb-4">
-        <div id="population-card" class="card">
-          <div class="card-body">
-            <h5 class="card-title"><i class="fas fa-users"></i> Population </h5>
-            <p class="card-text">Country Wide Population: ${population}</p>
-          </div>
+      <!-- Item Row -->
+      <div class="row" style="padding-bottom: 10px">
+        <!-- Country Description -->
+        <div class="col-sm-12">
+          <h3 class="my-3">Supplementary Details</h3>
+          <ul>
+            <li><i class="fas fa-thermometer-half"></i> Average yearly temperature: ${yearly_temperature} mm</li>
+            <li><i class="fas fa-tint"></i> Average yearly rainfall: ${yearly_rainfall} mm</li>
+          </ul>
         </div>
+
       </div>
-
-      <div class="col-md-3 col-sm-6 mb-4">
-        <div id="cell-usage-card" class="card">
-          <div class="card-body">
-            <h5 class="card-title"><i class="fas fa-mobile-alt"></i> Mobile Phone Usage</h5>
-            <p class="card-text">${cell_penetration} cell phones per 100 people</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 col-sm-6 mb-4">
-        <div id="electricity-usage-card" class="card">
-          <div class="card-body">
-            <h5 class="card-title"><i class="fas fa-tint"></i> Average Yearly Rainfall</h5>
-            <p class="card-text">${yearly_rainfall} mm</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 col-sm-6 mb-4">
-        <div id="electricity-usage-card" class="card">
-          <div class="card-body">
-            <h5 class="card-title"><i class="fas fa-bolt"></i> Electricity Usage</h5>
-            <p class="card-text">Country Wide Average: ${electricity_usage}%</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <!-- /.row -->
-
-    <!-- First Data Row -->
-    <div class="row">
-
-      <div class="col-md-3 col-sm-6 mb-4">
-        <div id="yearly-temperature-card" class="card">
-          <div class="card-body">
-            <h5 class="card-title"><i class="fas fa-thermometer-half"></i> Average Yearly Temperature </h5>
-            <p class="card-text">${yearly_temperature}&#8451;</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 col-sm-6 mb-4">
-        <div id="natural-resources-card" class="card">
-          <div class="card-body">
-            <h5 class="card-title"><i class="fas fa-tree"></i> Natural Resources</h5>
-            <p class="card-text">${natural_resources}</p>
-          </div>
-        </div>
-      </div>
-
       <!-- /.row -->
 
-    </div>
-    <!-- /.container -->
+      <!-- Statisitacal Information -->
+      <!-- <h3 class="my-4">Data:</h3> -->
+      <!-- First Data Row -->
+      <div class="row">
+
+        <div class="col-md-3 col-sm-6 mb-4">
+          <div id="population-card" class="card">
+            <div class="card-body">
+              <h5 class="card-title"><i class="fas fa-users"></i> Population </h5>
+              <p class="card-text">Country Wide Population: ${population}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+          <div id="cell-usage-card" class="card">
+            <div class="card-body">
+              <h5 class="card-title"><i class="fas fa-mobile-alt"></i> Mobile Phone Usage</h5>
+              <p class="card-text">${cell_penetration} cell phones per 100 people</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+          <div id="electricity-usage-card" class="card">
+            <div class="card-body">
+              <h5 class="card-title"><i class="fas fa-tint"></i> Average Yearly Rainfall</h5>
+              <p class="card-text">${yearly_rainfall} mm</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+          <div id="electricity-usage-card" class="card">
+            <div class="card-body">
+              <h5 class="card-title"><i class="fas fa-bolt"></i> Electricity Usage</h5>
+              <p class="card-text">Country Wide Average: ${electricity_usage}%</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- /.row -->
+
+      <!-- First Data Row -->
+      <div class="row">
+
+        <div class="col-md-3 col-sm-6 mb-4">
+          <div id="yearly-temperature-card" class="card">
+            <div class="card-body">
+              <h5 class="card-title"><i class="fas fa-thermometer-half"></i> Average Yearly Temperature </h5>
+              <p class="card-text">${yearly_temperature}&#8451;</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+          <div id="natural-resources-card" class="card">
+            <div class="card-body">
+              <h5 class="card-title"><i class="fas fa-tree"></i> Natural Resources</h5>
+              <p class="card-text">${natural_resources}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- /.row -->
+
+      </div>
+      <!-- /.container -->
 </body>
 
 </html>
 
 <script>
+
+  function initMap() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 8,
+      center: { lat: -34.397, lng: 150.644 }
+    });
+    var geocoder = new google.maps.Geocoder();
+  }
+
+  function geocodeAddress(geocoder, resultsMap) {
+    var address = document.getElementById('country-name').value;
+    geocoder.geocode({ 'address': address }, function (results, status) {
+      if (status === 'OK') {
+        resultsMap.setCenter(results[0].geometry.location);
+        var marker = new google.maps.Marker({
+          map: resultsMap,
+          position: results[0].geometry.location
+        });
+      } else {
+        alert('Geocode was not successful for the following reason: ' + status);
+      }
+    });
+  }
+
   $(document).ready(function () {
-
-    // //One of these worked not sure which
-    // $('#header_video').volume = 0;
-    // document.getElementsByTagName('video')[0].volume = 0;
-    // $("video").prop("volume", 0);
-
-    //console.log($('#header_video').volume);
 
     //Get Countries
     var countryArray = JSON.parse('${country_list}');
