@@ -13,27 +13,22 @@ public class MapServiceCountryInfoItem implements ICountryInfoItemService {
 	public CountryInfoItem GetCountryInfoItem(String countryName) {
 		CountryListService countryList = new CountryListService();
 		   String CountryName = countryList.getCountryName(countryName);
-		   String apiKey = "AIzaSyBwhOcDvZryXjm3ZSUxHHEHeRQflJH5ctc";
+		   String oldApiKey = "AIzaSyBwhOcDvZryXjm3ZSUxHHEHeRQflJH5ctc";
 
-	       String baseUrl = "https://maps.googleapis.com/maps/api/staticmap?center=";
-	       baseUrl+=CountryName;
-	       baseUrl +="&zoom=6";
-	       baseUrl +="&size=800x400";
-	       baseUrl += "&key=";
-	       baseUrl +=apiKey;
+	       String baseUrl = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCkQwa9T2l2h0txTwEjunyYBS-KLLOX17k&callback=initMap";
 	       
-	       try {
-	    	       URL url = new URL(baseUrl);
-	           HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-	           connection.setRequestMethod("GET");
+	    //    try {
+	    // 	       URL url = new URL(baseUrl);
+	    //        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+	    //        connection.setRequestMethod("GET");
 	           
 	    	   
-	       }
+	    //    }
 	       
-	       catch(Exception e){
-	    	   System.out.print("Something went wrong");
+	    //    catch(Exception e){
+	    // 	   System.out.print("Something went wrong");
 	    	   
-	       }
+	    //    }
 	       
 	        
 	        CountryInfoItem countryInfoItem = new CountryInfoItem();
