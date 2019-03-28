@@ -52,6 +52,10 @@ public class MonthlyTemperatureServiceCountryInfoItem implements ICountryInfoIte
           sum += i;
         }
         temp = sum / tempArray.length; // should always be 15
+        //round to 2 decimals
+        DecimalFormat df2 = new DecimalFormat("##.##");
+        temp = Double.valueOf(df2.format(temp));
+
         monthArray[monthNumber] = temp;
       }
 
@@ -65,7 +69,7 @@ public class MonthlyTemperatureServiceCountryInfoItem implements ICountryInfoIte
       countryInfoItem.setTitle("monthly_temp");
       //String str = DecimalFormat.getNumberInstance().format(temp);
       //str = new DecimalFormat("#.0#").format(temp);
-      countryInfoItem.setValue("January: " + monthArray[0] + " degrees Celcius\n" +
+      countryInfoItem.setValue("\nJanuary: " + monthArray[0] + " degrees Celcius\n" +
       "February: " + monthArray[1] + " degrees Celcius\n" +
       "March: " + monthArray[2] + " degrees Celcius\n" +
       "April: " + monthArray[3] + " degrees Celcius\n" +

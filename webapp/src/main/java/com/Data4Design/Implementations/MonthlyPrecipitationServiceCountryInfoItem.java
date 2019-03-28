@@ -52,6 +52,10 @@ public class MonthlyPrecipitationServiceCountryInfoItem implements ICountryInfoI
   					sum += i;
   				}
   				rainfall = sum / rainfallArray.length; // should always be 15
+          //round value to 2 decimals
+          DecimalFormat df2 = new DecimalFormat("##.##");
+          rainfall = Double.valueOf(df2.format(rainfall));
+
           monthArray[monthNumber] = rainfall;
 				}
 
@@ -65,7 +69,7 @@ public class MonthlyPrecipitationServiceCountryInfoItem implements ICountryInfoI
 				countryInfoItem.setTitle("monthly_rainfall");
 				//String str = DecimalFormat.getNumberInstance().format(rainfall);
 				//str = new DecimalFormat("#.0#").format(rainfall);
-				countryInfoItem.setValue("January: " + monthArray[0] + " inches\n" +
+				countryInfoItem.setValue("\nJanuary: " + monthArray[0] + " inches\n" +
         "February: " + monthArray[1] + " inches\n" +
         "March: " + monthArray[2] + " inches\n" +
         "April: " + monthArray[3] + " inches\n" +
