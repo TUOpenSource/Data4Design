@@ -1,13 +1,10 @@
 package com.Data4Design.webapp;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RestController;  
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
 import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class WelcomeController {
