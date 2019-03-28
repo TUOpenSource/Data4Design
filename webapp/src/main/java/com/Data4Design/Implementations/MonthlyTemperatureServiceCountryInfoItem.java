@@ -65,7 +65,7 @@ public class MonthlyTemperatureServiceCountryInfoItem implements ICountryInfoIte
       countryInfoItem.setTitle("monthly_temp");
       //String str = DecimalFormat.getNumberInstance().format(temp);
       //str = new DecimalFormat("#.0#").format(temp);
-      countryInfoItem.setValue("January: " + monthArray[0] + " degrees Celcius\n" +
+      countryInfoItem.setValue("\nJanuary: " + monthArray[0] + " degrees Celcius\n" +
       "February: " + monthArray[1] + " degrees Celcius\n" +
       "March: " + monthArray[2] + " degrees Celcius\n" +
       "April: " + monthArray[3] + " degrees Celcius\n" +
