@@ -1,7 +1,5 @@
 package com.Data4Design.services;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 public class CountryPopulationServiceTest {
@@ -18,4 +16,3 @@ public class CountryPopulationServiceTest {
 		test.getPopulation("bol");
 	}
 }
-
