@@ -1,6 +1,7 @@
 package com.Data4Design.Implementations;
 
 import com.Data4Design.Interfaces.ICountryInfoItemService;
+import com.Data4Design.Workflows.Implementations.Country;
 import com.Data4Design.Workflows.Implementations.CountryInfoItem;
 
 import java.io.BufferedReader;
@@ -16,11 +17,11 @@ import org.json.simple.JSONArray;
 public class AnnualPrecipitationServiceCountryInfoItem implements ICountryInfoItemService {
 
 	@Override
-	public CountryInfoItem GetCountryInfoItem(String countryName) {
+	public CountryInfoItem GetCountryInfoItem(Country thisCountry) {
 		//http://climatedataapi.worldbank.org/climateweb/rest/v1/country/type/var/start/end/ISO3[.ext]
 		 
 				String uri = String.format("http://climatedataapi.worldbank.org/climateweb/rest/v1/country/annualavg/pr/1980/1999/%s", 
-								countryName);
+								thisCountry.iso_3_str);
 				JSONParser parser = new JSONParser();
 				double rainfall = 0.0;
 				double[] rainfallArray = new double[15]; // World Bank Climate API has 15 sources for data

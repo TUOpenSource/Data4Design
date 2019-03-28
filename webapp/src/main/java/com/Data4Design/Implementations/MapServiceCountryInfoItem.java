@@ -4,15 +4,16 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import com.Data4Design.Interfaces.ICountryInfoItemService;
+import com.Data4Design.Workflows.Implementations.Country;
 import com.Data4Design.Workflows.Implementations.CountryInfoItem;
 import com.Data4Design.services.CountryListService;
 
 public class MapServiceCountryInfoItem implements ICountryInfoItemService {
 
 	@Override
-	public CountryInfoItem GetCountryInfoItem(String countryName) {
+	public CountryInfoItem GetCountryInfoItem(Country thisCountry) {
 		CountryListService countryList = new CountryListService();
-		   String CountryName = countryList.getCountryName(countryName);
+		   String CountryName = countryList.getCountryName(thisCountry.id);
 		   String apiKey = "AIzaSyBwhOcDvZryXjm3ZSUxHHEHeRQflJH5ctc";
 
 	       String baseUrl = "https://maps.googleapis.com/maps/api/staticmap?center=";

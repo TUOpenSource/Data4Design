@@ -19,20 +19,20 @@ public class GetCountryInfoWorkflow implements IGetCountryInfoWorkflow {
 	}
 	
 	@Override
-	public CountryInfo GetCountryInfo(String countryName) throws Exception {
+	public CountryInfo GetCountryInfo(Country thisCountry) throws Exception {
 		
-		if(countryName.equals(null))
-			throw new Exception(countryName);
+		if(thisCountry.countryName.equals(null))
+			throw new Exception(thisCountry.countryName);
 		
 		CountryInfo countryInfo = new CountryInfo();
-		countryInfo.CountryInfoItems = GetCountryInfoItems(countryName);
+		countryInfo.CountryInfoItems = GetCountryInfoItems(thisCountry);
 		return countryInfo;
 	}
 	
-	private Collection<CountryInfoItem> GetCountryInfoItems(String countryName){
+	private Collection<CountryInfoItem> GetCountryInfoItems(Country thisCountry){
 		return  iCountryInfoItemServices
 				.stream()
-				.map(iCountryInfoItemService -> iCountryInfoItemService.GetCountryInfoItem(countryName))
+				.map(iCountryInfoItemService -> iCountryInfoItemService.GetCountryInfoItem(thisCountry))
 				.filter(countryInfoItem -> countryInfoItem != null)
 				.collect(Collectors.toList());
 	}

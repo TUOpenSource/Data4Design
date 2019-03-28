@@ -5,6 +5,7 @@ import java.text.DecimalFormat;
 import org.json.simple.JSONObject;
 
 import com.Data4Design.Interfaces.ICountryInfoItemService;
+import com.Data4Design.Workflows.Implementations.Country;
 import com.Data4Design.Workflows.Implementations.CountryInfoItem;
 import com.Data4Design.services.CIAFactBookService;
 
@@ -13,11 +14,11 @@ public class CellPenetrationServiceCountryInfoItem implements ICountryInfoItemSe
 	private long cellPenetration;
 	
 	@Override
-	public CountryInfoItem GetCountryInfoItem(String countryName) {
+	public CountryInfoItem GetCountryInfoItem(Country thisCountry) {
 		
 
         CIAFactBookService factBook = new CIAFactBookService();
-        JSONObject country = factBook.getCIAFactBookCountryObject(countryName);
+        JSONObject country = factBook.getCIAFactBookCountryObject(thisCountry.id);
         try
         {
             JSONObject dataObject = (JSONObject) country.get("data");

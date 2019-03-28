@@ -11,15 +11,16 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import com.Data4Design.Interfaces.ICountryInfoItemService;
+import com.Data4Design.Workflows.Implementations.Country;
 import com.Data4Design.Workflows.Implementations.CountryInfoItem;
 
 public class ElectricityUsageServiceCountryInfoItem implements ICountryInfoItemService {
 
 	@Override
-	public CountryInfoItem GetCountryInfoItem(String countryName) {
+	public CountryInfoItem GetCountryInfoItem(Country thisCountry) {
 		//String dateParam = "date=2016:2016&format=json"; 
         //String uri = String.format("https://api.worldbank.org/v2/countries/%s/indicators/SP.POP.TOTL?%s", countryCode, dateParam);
-        String uri = String.format("http://api.worldbank.org/v2/countries/%s/indicators/EG.ELC.ACCS.ZS?format=json&MRV=1", countryName);
+        String uri = String.format("http://api.worldbank.org/v2/countries/%s/indicators/EG.ELC.ACCS.ZS?format=json&MRV=1", thisCountry.id);
         JSONParser parser = new JSONParser();
         double electricity = 0;
         
@@ -37,7 +38,7 @@ public class ElectricityUsageServiceCountryInfoItem implements ICountryInfoItemS
         JSONObject finallyAnObject = (JSONObject) innerJsonArray.get(0);
         
         electricity = (double) finallyAnObject.get("value"); // need a Result to handle Longs!!!!!!!
-        System.out.println("Electricity Usage of "+countryName+" = "+electricity);
+        System.out.println("Electricity Usage of "+thisCountry.countryName+" = "+electricity);
         //NumberResult.data = population ---> how to pass values to results when there isn't a
         // constructor or a set method? NumberResult.data is protected (default access modifier)
                 
