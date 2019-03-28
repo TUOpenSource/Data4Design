@@ -102,8 +102,8 @@
           <p>${country_description}</p> -->
           <h3 class="my-3">Supplementary Details</h3>
           <ul>
-            <li><i class="fas fa-thermometer-half"></i> Average monthly temperature: ${monthly_temperature} mm</li>
-            <li><i class="fas fa-tint"></i> Average monthly rainfall: ${monthly_rainfall} mm</li>
+            <li><i class="fas fa-thermometer-half"></i> Average monthly temperature: ${monthly_temperature}</li>
+            <li><i class="fas fa-tint"></i> Average monthly rainfall: ${monthly_rainfall}</li>
             <li>ISO 2 Code: ${country_code}</li>
             <li>ISO 3 Code: ${country_code_3}</li>
           </ul>
@@ -130,7 +130,7 @@
             <div id ="cell-usage-card" class="card" >
               <div class="card-body">
                 <h5 class="card-title"><i class="fas fa-mobile-alt"></i> Mobile Phone Usage</h5>
-                <p class="card-text">${cell_penetration} cell phones</p>
+                <p class="card-text">${cell_penetration} cell phones per 100 people</p>
               </div>
             </div>
         </div>
@@ -139,7 +139,7 @@
             <div id ="electricity-usage-card" class="card" >
               <div class="card-body">
                 <h5 class="card-title"><i class="fas fa-tint"></i> Average Monthly Rainfall</h5>
-                <p class="card-text">${monthly_rainfall} mm</p>
+                <p class="card-text">${monthly_rainfall}</p>
               </div>
             </div>
         </div>
@@ -163,7 +163,7 @@
             <div id ="monthly-temperature-card" class="card" >
               <div class="card-body">
                 <h5 class="card-title"><i class="fas fa-thermometer-half"></i> Average Monthly Temperature </h5>
-                <p class="card-text">${monthly_temperature}&#8451;</p>
+                <p class="card-text">${monthly_temperature}</p>
               </div>
             </div>
         </div>

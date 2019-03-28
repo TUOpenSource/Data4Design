@@ -69,18 +69,18 @@ public class MonthlyPrecipitationServiceCountryInfoItem implements ICountryInfoI
 				countryInfoItem.setTitle("monthly_rainfall");
 				//String str = DecimalFormat.getNumberInstance().format(rainfall);
 				//str = new DecimalFormat("#.0#").format(rainfall);
-				countryInfoItem.setValue("\nJanuary: " + monthArray[0] + " inches\n" +
-        "February: " + monthArray[1] + " inches\n" +
-        "March: " + monthArray[2] + " inches\n" +
-        "April: " + monthArray[3] + " inches\n" +
-        "May: " + monthArray[4] + " inches\n" +
-        "June: " + monthArray[5] + " inches\n" +
-        "July: " + monthArray[6] + " inches\n" +
-        "August: " + monthArray[7] + " inches\n" +
-        "September: " + monthArray[8] + " inches\n" +
-        "October: " + monthArray[9] + " inches\n" +
-        "November: " + monthArray[10] + " inches\n" +
-        "December: " + monthArray[11] + " inches\n");
+				countryInfoItem.setValue("\nJanuary: " + monthArray[0] + " mm\n" +
+        "February: " + monthArray[1] + " mm\n" +
+        "March: " + monthArray[2] + " mm\n" +
+        "April: " + monthArray[3] + " mm\n" +
+        "May: " + monthArray[4] + " mm\n" +
+        "June: " + monthArray[5] + " mm\n" +
+        "July: " + monthArray[6] + " mm\n" +
+        "August: " + monthArray[7] + " mm\n" +
+        "September: " + monthArray[8] + " mm\n" +
+        "October: " + monthArray[9] + " mm\n" +
+        "November: " + monthArray[10] + " mm\n" +
+        "December: " + monthArray[11] + " mm\n");
 				return countryInfoItem;
 	}
 }
