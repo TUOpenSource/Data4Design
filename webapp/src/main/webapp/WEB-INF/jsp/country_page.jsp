@@ -130,7 +130,7 @@
       </div>
 
       <div class="col-md-6">
-        <h3>Environement Data</h3>
+        <h3>Environment Data</h3>
         <ul class="fa-ul">
           <li>
             <span class="fa-li"><i class="fas fa-thermometer-half"></i></span>
