@@ -1,67 +1,61 @@
 package com.Data4Design.services;
 
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.io.InputStreamReader;
-import java.io.BufferedReader;
+import java.util.Iterator;
 
-import com.Data4Design.results.LongResult;
-import java.util.*;
 import org.json.simple.JSONObject;
-import org.json.simple.JSONArray;
 import org.json.simple.parser.JSONParser;
 
 /**
- * Makes a call to World Bank API to get the population of a specified 
- * country. Whittles JSON arrays down to the population value. Needs to return
- * some form of NumberResult, but NumberResult doesn't currently handle longs....
+ * Makes a call to World Bank API to get the population of a specified country.
+ * Whittles JSON arrays down to the population value. Needs to return some form
+ * of NumberResult, but NumberResult doesn't currently handle longs....
  */
 public class CountryListService implements ICountryListService {
-    
-    public CountryListService(){
-        try{
+
+    public CountryListService() {
+        try {
             JSONParser parser = new JSONParser();
             this.countrylist_obj = (JSONObject) parser.parse(this.countrylist_str);
             this.iso_2_to_3_obj = (JSONObject) parser.parse(this.iso_2_to_3);
-            
-        }catch (Exception e) {
-            System.out.println("ERROR: "+e);
+
+        } catch (Exception e) {
+            System.out.println("ERROR: " + e);
         }
     }
 
     @Override
     public JSONObject getCountryList() {
-        //System.out.println(this.countrylist_obj);
+        // System.out.println(this.countrylist_obj);
         return this.countrylist_obj;
     }
 
     @Override
     public String getCountryListString() {
-        //System.out.println(this.countrylist_obj);
+        // System.out.println(this.countrylist_obj);
         return this.countrylist_str;
     }
 
-     @Override
+    @Override
     public String getCountryCode(String name) {
-        for(Iterator iterator = this.countrylist_obj.keySet().iterator(); iterator.hasNext();) {
+        for (Iterator iterator = this.countrylist_obj.keySet().iterator(); iterator.hasNext();) {
             String key = (String) iterator.next();
             String name_res = (String) this.countrylist_obj.get(key);
-            if(name_res.equals(name)){
+            if (name_res.equals(name)) {
                 return key;
             }
-            //System.out.println(this.countrylist_obj.get(key));
+            // System.out.println(this.countrylist_obj.get(key));
         }
         return "";
     }
 
-     @Override
+    @Override
     public String getCountryName(String code) {
         String codeUp = code.toUpperCase();
         return (String) this.countrylist_obj.get(codeUp);
     }
 
     @Override
-    public String toISO3(String iso2){
+    public String toISO3(String iso2) {
         String codeUp = iso2.toUpperCase();
         return (String) this.iso_2_to_3_obj.get(codeUp);
     }

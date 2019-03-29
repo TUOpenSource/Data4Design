@@ -94,22 +94,26 @@
       <div class="col-md-4">
         <!-- <h3 class="my-3">Country Description</h3>
           <p>${country_description}</p> -->
-        <h3 class="my-3">Climate Data</h3>
-        <ul>
-          <li><span class="fa-li"><i class="fas fa-check-square"></i></span>List icons can</li>
+        <h3 class="my-3">Environment Data</h3>
+        <!-- <ul>
           <li><span class="fa-li"><i class="fas fa-thermometer-half"></i></span>Average yearly temperature:
             ${yearly_temperature} mm</li>
           <li><span class="fa-li"><i class="fas fa-tint"></i></span> Average yearly rainfall: ${yearly_rainfall} mm</li>
+        </ul> -->
+        <ul>
+          <li>Average yearly temperature:
+            ${yearly_temperature} mm</li>
+          <li>Average yearly rainfall: ${yearly_rainfall} mm</li>
+          <li>Natural Resources Available: ${natural_resources}</li>
         </ul>
       </div>
 
     </div>
     <!-- /.row -->
 
-    <div class="row">
+    <!-- <div class="row">
       <h3 class="col-sm-12">Population Data</h3>
       <ul>
-        <li><span class="fa-li"><i class="fas fa-check-square"></i></span>List icons can</li>
         <li>
           <h5><i class="fas fa-users"></i> Population: ${population}</h5>
         </li>
@@ -118,6 +122,20 @@
         </li>
         <li>
           <h5 class="card-title"><i class="fas fa-bolt"></i> Electricity Penetration: ${electricity_usage}%</h5>
+        </li>
+      </ul>
+    </div> -->
+    <div class="row">
+      <h3 class="col-sm-12">Population Data</h3>
+      <ul>
+        <li>
+          <h5>Population: ${population}</h5>
+        </li>
+        <li>
+          <h5> Mobile Phone Penetration: ${cell_penetration}%</h5>
+        </li>
+        <li>
+          <h5>Electricity Penetration: ${electricity_usage}%</h5>
         </li>
       </ul>
     </div>
@@ -139,7 +157,7 @@
         <div id="cell-usage-card" class="card">
           <div class="card-body">
             <h5 class="card-title"><i class="fas fa-mobile-alt"></i> Mobile Phone Usage</h5>
-            <p class="card-text">${cell_penetration} cell phones</p>
+            <p class="card-text">${cell_penetration} cell phones per 100 people</p>
           </div>
         </div>
       </div>
@@ -147,8 +165,8 @@
       <div class="col-md-3 col-sm-6 mb-4">
         <div id="electricity-usage-card" class="card">
           <div class="card-body">
-            <h5 class="card-title"><i class="fas fa-tint"></i> Average Yearly Rainfall</h5>
-            <p class="card-text">${yearly_rainfall} mm</p>
+            <h5 class="card-title"><i class="fas fa-tint"></i> Average monthly Rainfall</h5>
+            <p class="card-text">${monthly_rainfall}</p>
           </div>
         </div>
       </div>
@@ -170,10 +188,10 @@
     <div class="row">
 
       <div class="col-md-3 col-sm-6 mb-4">
-        <div id="yearly-temperature-card" class="card">
+        <div id="monthly-temperature-card" class="card">
           <div class="card-body">
-            <h5 class="card-title"><i class="fas fa-thermometer-half"></i> Average Yearly Temperature </h5>
-            <p class="card-text">${yearly_temperature}&#8451;</p>
+            <h5 class="card-title"><i class="fas fa-thermometer-half"></i> Average monthly Temperature </h5>
+            <p class="card-text">${monthly_temperature}</p>
           </div>
         </div>
       </div>

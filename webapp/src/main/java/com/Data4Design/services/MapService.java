@@ -1,22 +1,13 @@
 package com.Data4Design.services;
 
-import com.Data4Design.results.StringResult;
-import com.Data4Design.services.CountryListService;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-
-import com.Data4Design.results.LongResult;
+import com.Data4Design.results.StringResult;
 
 public class MapService implements IMapService {
 
 	public StringResult getMap(String countryCode) {
-		CountryListService countryList = new CountryListService();
 		String apiKey = System.getenv("GoogleMapsAPI");// new api key generated. Expires after 12 months.
 		String baseUrl = "https://maps.googleapis.com/maps/api/js?key=";
 		baseUrl += apiKey;

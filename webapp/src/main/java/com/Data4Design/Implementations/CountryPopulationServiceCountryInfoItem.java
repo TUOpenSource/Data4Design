@@ -11,15 +11,16 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import com.Data4Design.Interfaces.ICountryInfoItemService;
+import com.Data4Design.Workflows.Implementations.Country;
 import com.Data4Design.Workflows.Implementations.CountryInfoItem;
 
 public class CountryPopulationServiceCountryInfoItem implements ICountryInfoItemService {
 
 	@Override
-	public CountryInfoItem GetCountryInfoItem(String countryName) {
+	public CountryInfoItem GetCountryInfoItem(Country thisCountry) {
 		String dateParam = "date=2016:2016&format=json"; 
 		String uri = String.format("https://api.worldbank.org/v2/countries/%s/indicators/SP.POP.TOTL?%s", 
-						countryName, dateParam);
+						thisCountry.id, dateParam);
 		JSONParser parser = new JSONParser();
 		long population = 0;
 		

@@ -11,14 +11,15 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import com.Data4Design.Interfaces.ICountryInfoItemService;
+import com.Data4Design.Workflows.Implementations.Country;
 import com.Data4Design.Workflows.Implementations.CountryInfoItem;
 
 public class AnnualTemperatureServiceCountryInfoItem implements ICountryInfoItemService {
 
 	@Override
-	public CountryInfoItem GetCountryInfoItem(String countryName) {
+	public CountryInfoItem GetCountryInfoItem(Country thisCountry) {
 		String uri = String.format("http://climatedataapi.worldbank.org/climateweb/rest/v1/country/annualavg/tas/1980/1999/%s", 
-				countryName);
+				thisCountry.iso_3_str);
 		JSONParser parser = new JSONParser();
 		double temperature = 0.0;
 		double[] rainfallArray = new double[15]; // World Bank Climate API has 15 sources for data
