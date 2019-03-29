@@ -23,7 +23,7 @@
 
   <script src="/js/node_modules/jquery/dist/jquery.min.js"></script>
   <script src="/js/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="${baseUrl}" async defer></script>
+  <script src="${map}" async defer></script>
   <!--<link href="/js/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />-->
   <link rel="icon" href="../../../../favicon.ico">
 
@@ -89,24 +89,8 @@
     <!-- Item Row -->
     <div class="row" style="padding-bottom: 20px">
       <!-- Interactive Country Map using Javascript API-->
-      <div id="map" class="col-md-8" style="padding-top: 10px"></div>
+      <div id="map" class="col-sm-12" style="padding-top: 10px"></div>
       <!-- Country Description -->
-      <div class="col-md-4">
-        <!-- <h3 class="my-3">Country Description</h3>
-          <p>${country_description}</p> -->
-        <h3 class="my-3">Environment Data</h3>
-        <!-- <ul>
-          <li><span class="fa-li"><i class="fas fa-thermometer-half"></i></span>Average yearly temperature:
-            ${yearly_temperature} mm</li>
-          <li><span class="fa-li"><i class="fas fa-tint"></i></span> Average yearly rainfall: ${yearly_rainfall} mm</li>
-        </ul> -->
-        <ul>
-          <li>Average yearly temperature:
-            ${yearly_temperature} mm</li>
-          <li>Average yearly rainfall: ${yearly_rainfall} mm</li>
-          <li>Natural Resources Available: ${natural_resources}</li>
-        </ul>
-      </div>
 
     </div>
     <!-- /.row -->
@@ -125,24 +109,42 @@
         </li>
       </ul>
     </div> -->
+
     <div class="row">
-      <h3 class="col-sm-12">Population Data</h3>
-      <ul>
-        <li>
-          <h5>Population: ${population}</h5>
-        </li>
-        <li>
-          <h5> Mobile Phone Penetration: ${cell_penetration}%</h5>
-        </li>
-        <li>
-          <h5>Electricity Penetration: ${electricity_usage}%</h5>
-        </li>
-      </ul>
+      <div class="col-md-6">
+        <h3>Population Data</h3>
+        <ul>
+          <li>
+            <h5>Population: ${population}</h5>
+          </li>
+          <li>
+            <h5> Mobile Phone Penetration: ${cell_penetration}%</h5>
+          </li>
+          <li>
+            <h5>Electricity Penetration: ${electricity_usage}%</h5>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-md-6">
+        <h3 >Environement Data</h3>
+        <ul>
+          <li>
+            <h5>Average Annual Temperature: ${population}&deg;C</h5>
+          </li>
+          <li>
+            <h5> Average Annual Rainfall: ${yearly_rainfall}mm</h5>
+          </li>
+          <li>
+            <h5>Natural Resources Available: ${natural_resources}</h5>
+          </li>
+        </ul>
+      </div>
     </div>
     <!-- Statisitacal Information -->
 
     <!-- First Data Row -->
-    <div class="row">
+    <!-- <div class="row">
 
       <div class="col-md-3 col-sm-6 mb-4">
         <div id="population-card" class="card">
@@ -181,11 +183,11 @@
       </div>
 
 
-    </div>
+    </div> -->
     <!-- /.row -->
 
     <!-- First Data Row -->
-    <div class="row">
+    <!-- <div class="row">
 
       <div class="col-md-3 col-sm-6 mb-4">
         <div id="monthly-temperature-card" class="card">
@@ -205,7 +207,7 @@
         </div>
       </div>
 
-    </div>
+    </div> -->
     <!-- /.row -->
     <!-- /.container -->
   </div>

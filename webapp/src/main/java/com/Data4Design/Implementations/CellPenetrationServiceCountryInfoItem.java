@@ -38,7 +38,7 @@ public class CellPenetrationServiceCountryInfoItem implements ICountryInfoItemSe
 		countryInfoItem.setTitle("cell_penetration");
 		String str = DecimalFormat.getNumberInstance().format(cellPenetration);
 		str = new DecimalFormat("#.0#").format(cellPenetration);
-		countryInfoItem.setValue(str + " units");
+		countryInfoItem.setValue(str);
 		return countryInfoItem;
 
         

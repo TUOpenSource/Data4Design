@@ -37,7 +37,7 @@ public class ElectricityUsageServiceCountryInfoItem implements ICountryInfoItemS
 		countryInfoItem.setTitle("electricity_usage");
 		String str = DecimalFormat.getNumberInstance().format(electricityUsage);
 		str = new DecimalFormat("#.0#").format(electricityUsage);
-		countryInfoItem.setValue(str + " units");
+		countryInfoItem.setValue(str);
 		return countryInfoItem;
 	}
 	private long electricityUsage;
