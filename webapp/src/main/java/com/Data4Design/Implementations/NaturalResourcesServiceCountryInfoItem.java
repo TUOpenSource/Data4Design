@@ -43,6 +43,7 @@ public class NaturalResourcesServiceCountryInfoItem implements ICountryInfoItemS
         catch(NullPointerException e)
         {
            System.out.println("Data not available.");
+           
         }
 
         return null;
