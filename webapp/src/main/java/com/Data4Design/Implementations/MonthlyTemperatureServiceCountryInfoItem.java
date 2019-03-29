@@ -1,13 +1,13 @@
 package com.Data4Design.Implementations;
 
 import com.Data4Design.Interfaces.ICountryInfoItemService;
+import com.Data4Design.Workflows.Implementations.Country;
 import com.Data4Design.Workflows.Implementations.CountryInfoItem;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.text.DecimalFormat;
 
 import org.json.simple.parser.JSONParser;
 import org.json.simple.JSONObject;
@@ -16,11 +16,11 @@ import org.json.simple.JSONArray;
 public class MonthlyTemperatureServiceCountryInfoItem implements ICountryInfoItemService {
 
 	@Override
-  public CountryInfoItem GetCountryInfoItem(String countryName) { //Jan=1, Feb=2, etc
+  public CountryInfoItem GetCountryInfoItem(Country thisCountry) { //Jan=1, Feb=2, etc
   //http://climatedataapi.worldbank.org/climateweb/rest/v1/country/type/var/start/end/ISO3[.ext]
 
       String uri = String.format("http://climatedataapi.worldbank.org/climateweb/rest/v1/country/mavg/pr/1980/1999/%s",
-              countryName);
+              thisCountry.iso_3_str);
       JSONParser parser = new JSONParser();
       double temp = 0.0;
       double[] monthArray = new double[12]; // Array to hold every month's average value
