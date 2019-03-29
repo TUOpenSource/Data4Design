@@ -93,8 +93,8 @@
           <p>${country_description}</p> -->
         <h3 class="my-3">Supplementary Details</h3>
         <ul>
-          <li><i class="fas fa-thermometer-half"></i> Average yearly temperature: ${yearly_temperature} mm</li>
-          <li><i class="fas fa-tint"></i> Average yearly rainfall: ${yearly_rainfall} mm</li>
+          <li><i class="fas fa-thermometer-half"></i> Average monthly temperature: ${monthly_temperature}</li>
+          <li><i class="fas fa-tint"></i> Average monthly rainfall: ${monthly_rainfall}</li>
           <li>ISO 2 Code: ${country_code}</li>
           <li>ISO 3 Code: ${country_code_3}</li>
         </ul>
@@ -121,7 +121,7 @@
         <div id="cell-usage-card" class="card">
           <div class="card-body">
             <h5 class="card-title"><i class="fas fa-mobile-alt"></i> Mobile Phone Usage</h5>
-            <p class="card-text">${cell_penetration} cell phones</p>
+            <p class="card-text">${cell_penetration} cell phones per 100 people</p>
           </div>
         </div>
       </div>
@@ -129,8 +129,8 @@
       <div class="col-md-3 col-sm-6 mb-4">
         <div id="electricity-usage-card" class="card">
           <div class="card-body">
-            <h5 class="card-title"><i class="fas fa-tint"></i> Average Yearly Rainfall</h5>
-            <p class="card-text">${yearly_rainfall} mm</p>
+            <h5 class="card-title"><i class="fas fa-tint"></i> Average monthly Rainfall</h5>
+            <p class="card-text">${monthly_rainfall}</p>
           </div>
         </div>
       </div>
@@ -151,10 +151,10 @@
     <div class="row">
 
       <div class="col-md-3 col-sm-6 mb-4">
-        <div id="yearly-temperature-card" class="card">
+        <div id="monthly-temperature-card" class="card">
           <div class="card-body">
-            <h5 class="card-title"><i class="fas fa-thermometer-half"></i> Average Yearly Temperature </h5>
-            <p class="card-text">${yearly_temperature}&#8451;</p>
+            <h5 class="card-title"><i class="fas fa-thermometer-half"></i> Average monthly Temperature </h5>
+            <p class="card-text">${monthly_temperature}</p>
           </div>
         </div>
       </div>
