@@ -113,14 +113,17 @@
     <div class="row">
       <div class="col-md-6">
         <h3>Population Data</h3>
-        <ul>
+        <ul class="fa-ul">
           <li>
+            <span class="fa-li"><i class="fas fa-users"></i></span>
             <h5>Population: ${population}</h5>
           </li>
           <li>
+            <span class="fa-li"><i class="fas fa-mobile-alt"></i></span>
             <h5> Mobile Phone Penetration: ${cell_penetration}%</h5>
           </li>
           <li>
+            <span class="fa-li"><i class="fas fa-bolt"></i></span>
             <h5>Electricity Penetration: ${electricity_usage}%</h5>
           </li>
         </ul>
@@ -128,14 +131,17 @@
 
       <div class="col-md-6">
         <h3>Environement Data</h3>
-        <ul>
+        <ul class="fa-ul">
           <li>
-            <h5>Average Annual Temperature: ${population}&deg;C</h5>
+            <span class="fa-li"><i class="fas fa-thermometer-half"></i></span>
+            <h5>Average Annual Temperature: 23&deg;C</h5>
           </li>
           <li>
-            <h5> Average Annual Rainfall: ${yearly_rainfall}mm</h5>
+            <span class="fa-li"><i class="fas fa-tint"></i></span>
+            <h5> Average Annual Rainfall: 500mm</h5>
           </li>
           <li>
+            <span class="fa-li"><i class="fas fa-tree"></i></span>
             <h5>Natural Resources Available: ${natural_resources}</h5>
           </li>
         </ul>
