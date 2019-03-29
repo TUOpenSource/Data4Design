@@ -48,7 +48,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Data 4 Design</a>
+      <a class="navbar-brand" href="/">Data 4 Design</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
         aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -127,7 +127,7 @@
       </div>
 
       <div class="col-md-6">
-        <h3 >Environement Data</h3>
+        <h3>Environement Data</h3>
         <ul>
           <li>
             <h5>Average Annual Temperature: ${population}&deg;C</h5>
@@ -140,6 +140,28 @@
           </li>
         </ul>
       </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-6">
+        <h3>Major Cities</h3>
+        <ul>
+          <li>
+            <h5>This data coming soon</h5>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-md-6">
+        <h3>Safety & Statistics</h3>
+        <ul>
+          <li>
+            <h5>This data coming soon</h5>
+          </li>
+        </ul>
+      </div>
+
     </div>
     <!-- Statisitacal Information -->
 
