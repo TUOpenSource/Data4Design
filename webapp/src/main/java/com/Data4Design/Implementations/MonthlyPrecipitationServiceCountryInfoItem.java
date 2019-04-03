@@ -66,7 +66,7 @@ public class MonthlyPrecipitationServiceCountryInfoItem implements ICountryInfoI
 				countryInfoItem.setTitle("monthly_rainfall");
 				//String str = DecimalFormat.getNumberInstance().format(rainfall);
 				//str = new DecimalFormat("#.0#").format(rainfall);
-				countryInfoItem.setValue("January: " + monthArray[0] + " mm\n" +
+				countryInfoItem.setValue("\nJanuary: " + monthArray[0] + " mm\n" +
         "February: " + monthArray[1] + " mm\n" +
         "March: " + monthArray[2] + " mm\n" +
         "April: " + monthArray[3] + " mm\n" +
