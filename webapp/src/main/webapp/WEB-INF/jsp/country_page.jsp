@@ -134,7 +134,7 @@
         <ul class="fa-ul">
           <li>
             <span class="fa-li"><i class="fas fa-thermometer-half"></i></span>
-            <h5>Average Monthly Temperature: ${monthly_temperature}&deg;C</h5>
+            <h5>Average Monthly Temperature: ${monthly_temp}&deg;C</h5>
           </li>
           <li>
             <span class="fa-li"><i class="fas fa-tint"></i></span>

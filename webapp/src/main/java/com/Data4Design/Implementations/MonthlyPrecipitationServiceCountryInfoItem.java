@@ -9,6 +9,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import java.util.Arrays;
+
 
 import org.json.simple.parser.JSONParser;
 import org.json.simple.JSONObject;
@@ -17,7 +19,7 @@ import org.json.simple.JSONArray;
 public class MonthlyPrecipitationServiceCountryInfoItem implements ICountryInfoItemService {
 
 	@Override
-	public CountryInfoItem GetCountryInfoItem(Country thisCountry) { //Jan=1, Feb=2, etc
+	public CountryInfoItem GetCountryInfoItem(Country thisCountry) {
 		//http://climatedataapi.worldbank.org/climateweb/rest/v1/country/type/var/start/end/ISO3[.ext]
 
 				String uri = String.format("http://climatedataapi.worldbank.org/climateweb/rest/v1/country/mavg/pr/1980/1999/%s",
@@ -54,6 +56,7 @@ public class MonthlyPrecipitationServiceCountryInfoItem implements ICountryInfoI
   				}
   				rainfall = sum / rainfallArray.length; // should always be 15
           monthArray[monthNumber] = rainfall;
+					//System.out.println(Arrays.toString(monthArray));
 				}
 
 				json.close();
@@ -62,6 +65,7 @@ public class MonthlyPrecipitationServiceCountryInfoItem implements ICountryInfoI
 					System.out.println("ERROR: "+e);
 				}
 
+				//System.out.println(Arrays.toString(monthArray));
 				CountryInfoItem countryInfoItem = new CountryInfoItem();
 				countryInfoItem.setTitle("monthly_rainfall");
 				//String str = DecimalFormat.getNumberInstance().format(rainfall);
