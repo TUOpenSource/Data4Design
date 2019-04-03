@@ -34,14 +34,14 @@ public class CountryLookupController {
 
     	iCountryInfoItemServices.add(new MonthlyPrecipitationServiceCountryInfoItem());
 		iCountryInfoItemServices.add(new MonthlyTemperatureServiceCountryInfoItem());
-		iCountryInfoItemServices.add(new AnnualPrecipitationServiceCountryInfoItem());
-		iCountryInfoItemServices.add(new AnnualTemperatureServiceCountryInfoItem());
+		iCountryInfoItemServices.add(new MonthlyPrecipitationServiceCountryInfoItem());
+		iCountryInfoItemServices.add(new MonthlyTemperatureServiceCountryInfoItem());
     	iCountryInfoItemServices.add(new CellPenetrationServiceCountryInfoItem());
     	iCountryInfoItemServices.add(new CountryPopulationServiceCountryInfoItem());
     	iCountryInfoItemServices.add(new ElectricityUsageServiceCountryInfoItem());
     	iCountryInfoItemServices.add(new MapServiceCountryInfoItem());
 		iCountryInfoItemServices.add(new NaturalResourcesServiceCountryInfoItem());
-		
+
 		CountryListService country_list_service = new CountryListService();
         String country_list = country_list_service.getCountryListString();
 		model.put("country_code", str_id);

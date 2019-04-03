@@ -134,11 +134,11 @@
         <ul class="fa-ul">
           <li>
             <span class="fa-li"><i class="fas fa-thermometer-half"></i></span>
-            <h5>Average Annual Temperature: ${yearly_temperature}&deg;C</h5>
+            <h5>Average Monthly Temperature: ${monthly_temp}&deg;C</h5>
           </li>
           <li>
             <span class="fa-li"><i class="fas fa-tint"></i></span>
-            <h5> Average Annual Rainfall: ${yearly_rainfall}mm</h5>
+            <h5> Average Monthly Rainfall: ${monthly_rainfall}mm</h5>
           </li>
           <li>
             <span class="fa-li"><i class="fas fa-tree"></i></span>
