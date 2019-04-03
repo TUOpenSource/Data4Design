@@ -8,12 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
-import com.Data4Design.services.*;
-import com.Data4Design.results.*;
 import com.Data4Design.Implementations.*;
-import com.Data4Design.Interfaces.*;
 import com.Data4Design.Workflows.Implementations.*;
-import com.Data4Design.Workflows.Interfaces.*;
 import com.Data4Design.Implementations.MonthlyPrecipitationServiceCountryInfoItem;
 import com.Data4Design.Implementations.MonthlyTemperatureServiceCountryInfoItem;
 import com.Data4Design.Interfaces.ICountryInfoItemService;
@@ -53,6 +49,10 @@ public class CountryLookupController {
     	for(CountryInfoItem c: countryInfo.CountryInfoItems) {
     		model.put(c.Title, c.Value);
     	}
+    	
+    	model.put("country_code", thisCountry.iso_2_str);
+    	model.put("country_code_3", thisCountry.iso_3_str);
+    	model.put("country_name", thisCountry.countryName);
 
         return "country_page";
     }
