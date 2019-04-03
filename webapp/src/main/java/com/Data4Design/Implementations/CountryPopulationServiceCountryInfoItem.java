@@ -49,7 +49,7 @@ public class CountryPopulationServiceCountryInfoItem implements ICountryInfoItem
 		CountryInfoItem countryInfoItem = new CountryInfoItem();
 		countryInfoItem.setTitle("population");
 		String str = DecimalFormat.getNumberInstance().format(population);
-		str = new DecimalFormat("#.0#").format(population);
+		// str = new DecimalFormat("#.0#").format(population);
 		countryInfoItem.setValue(str );
 		return countryInfoItem;
 	}

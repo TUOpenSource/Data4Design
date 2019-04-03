@@ -7,7 +7,6 @@ import org.json.simple.JSONObject;
 import com.Data4Design.Interfaces.ICountryInfoItemService;
 import com.Data4Design.Workflows.Implementations.Country;
 import com.Data4Design.Workflows.Implementations.CountryInfoItem;
-import com.Data4Design.results.LongResult;
 import com.Data4Design.services.CIAFactBookService;
 
 public class CellPenetrationServiceCountryInfoItem implements ICountryInfoItemService {
@@ -38,7 +37,7 @@ public class CellPenetrationServiceCountryInfoItem implements ICountryInfoItemSe
 		countryInfoItem.setTitle("cell_penetration");
 		String str = DecimalFormat.getNumberInstance().format(cellPenetration);
 		str = new DecimalFormat("#.0#").format(cellPenetration);
-		countryInfoItem.setValue(str + " units");
+		countryInfoItem.setValue(str);
 		return countryInfoItem;
 
         

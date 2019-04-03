@@ -14,6 +14,7 @@ import com.Data4Design.Implementations.MonthlyPrecipitationServiceCountryInfoIte
 import com.Data4Design.Implementations.MonthlyTemperatureServiceCountryInfoItem;
 import com.Data4Design.Interfaces.ICountryInfoItemService;
 import com.Data4Design.Workflows.Interfaces.IGetCountryInfoWorkflow;
+import com.Data4Design.services.CountryListService;
 
 
 @Controller
@@ -29,15 +30,25 @@ public class CountryLookupController {
     public String country_page(Map<String, Object> model, @PathVariable String id) {
     	String str_id = String.valueOf(id);
     	CountryInfo countryInfo = new CountryInfo();
-    	Country thisCountry = new Country(str_id);
+		Country thisCountry = new Country(str_id);
 
     	iCountryInfoItemServices.add(new MonthlyPrecipitationServiceCountryInfoItem());
-    	iCountryInfoItemServices.add(new MonthlyTemperatureServiceCountryInfoItem());
+		iCountryInfoItemServices.add(new MonthlyTemperatureServiceCountryInfoItem());
+		iCountryInfoItemServices.add(new AnnualPrecipitationServiceCountryInfoItem());
+		iCountryInfoItemServices.add(new AnnualTemperatureServiceCountryInfoItem());
     	iCountryInfoItemServices.add(new CellPenetrationServiceCountryInfoItem());
     	iCountryInfoItemServices.add(new CountryPopulationServiceCountryInfoItem());
     	iCountryInfoItemServices.add(new ElectricityUsageServiceCountryInfoItem());
     	iCountryInfoItemServices.add(new MapServiceCountryInfoItem());
-    	iCountryInfoItemServices.add(new NaturalResourcesServiceCountryInfoItem());
+		iCountryInfoItemServices.add(new NaturalResourcesServiceCountryInfoItem());
+		
+		CountryListService country_list_service = new CountryListService();
+        String country_list = country_list_service.getCountryListString();
+		model.put("country_code", str_id);
+
+		model.put("country_list", country_list);
+		model.put("country_name", country_list_service.getCountryName(str_id));
+		model.put("country_code_3", country_list_service.toISO3(str_id));
 
     	try {
 			countryInfoWorkflow = new GetCountryInfoWorkflow(iCountryInfoItemServices);
@@ -53,8 +64,9 @@ public class CountryLookupController {
     	model.put("country_code", thisCountry.iso_2_str);
     	model.put("country_code_3", thisCountry.iso_3_str);
     	model.put("country_name", thisCountry.countryName);
+		
 
         return "country_page";
-    }
-
+     }
 }
+

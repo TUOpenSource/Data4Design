@@ -63,7 +63,7 @@ public class AnnualPrecipitationServiceCountryInfoItem implements ICountryInfoIt
 				countryInfoItem.setTitle("yearly_rainfall");
 				String str = DecimalFormat.getNumberInstance().format(rainfall);
 				str = new DecimalFormat("#.0#").format(rainfall);
-				countryInfoItem.setValue(str + " inches per year");
+				countryInfoItem.setValue(str);//+ " inches per year");
 				return countryInfoItem;
 	}
 

@@ -61,7 +61,7 @@ public class AnnualTemperatureServiceCountryInfoItem implements ICountryInfoItem
 		countryInfoItem.setTitle("yearly_temperature");
 		String str = DecimalFormat.getNumberInstance().format(temperature);
 		str = new DecimalFormat("#.0#").format(temperature);
-		countryInfoItem.setValue(str + " degrees Fahrenheit");
+		countryInfoItem.setValue(str);// + " degrees Fahrenheit");
 		return countryInfoItem;
 	}
 
