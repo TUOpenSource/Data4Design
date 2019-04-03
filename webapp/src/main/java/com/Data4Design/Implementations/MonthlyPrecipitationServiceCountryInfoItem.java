@@ -55,8 +55,8 @@ public class MonthlyPrecipitationServiceCountryInfoItem implements ICountryInfoI
   					sum += i;
   				}
   				rainfall = sum / rainfallArray.length; // should always be 15
-          monthArray[monthNumber] = rainfall;
-					//System.out.println(Arrays.toString(monthArray));
+					double roundOff = Math.round(rainfall * 100.0) / 100.0;
+					monthArray[monthNumber] = roundOff;
 				}
 
 				json.close();

@@ -54,7 +54,8 @@ public class MonthlyTemperatureServiceCountryInfoItem implements ICountryInfoIte
 			sum += i;
 		}
 		temp = sum / tempArray.length; // should always be 15
-		monthArray[monthNumber] = temp;
+		double roundOff = Math.round(temp * 100.0) / 100.0;
+		monthArray[monthNumber] = roundOff;
 
 	}
 
@@ -69,18 +70,18 @@ public class MonthlyTemperatureServiceCountryInfoItem implements ICountryInfoIte
 	countryInfoItem.setTitle("monthly_temp");
 	//String str = DecimalFormat.getNumberInstance().format(temp);
 	//str = new DecimalFormat("#.0#").format(temp);
-	countryInfoItem.setValue("\nJanuary: " + monthArray[0] + " mm\n" +
-	"February: " + monthArray[1] + " mm\n" +
-	"March: " + monthArray[2] + " mm\n" +
-	"April: " + monthArray[3] + " mm\n" +
-	"May: " + monthArray[4] + " mm\n" +
-	"June: " + monthArray[5] + " mm\n" +
-	"July: " + monthArray[6] + " mm\n" +
-	"August: " + monthArray[7] + " mm\n" +
-	"September: " + monthArray[8] + " mm\n" +
-	"October: " + monthArray[9] + " mm\n" +
-	"November: " + monthArray[10] + " mm\n" +
-	"December: " + monthArray[11] + " mm\n");
+	countryInfoItem.setValue("\nJanuary: " + monthArray[0] + " degrees Celcius\n" +
+	"February: " + monthArray[1] + " degrees Celcius\n" +
+	"March: " + monthArray[2] + " degrees Celcius\n" +
+	"April: " + monthArray[3] + " degrees Celcius\n" +
+	"May: " + monthArray[4] + " degrees Celcius\n" +
+	"June: " + monthArray[5] + " degrees Celcius\n" +
+	"July: " + monthArray[6] + " degrees Celcius\n" +
+	"August: " + monthArray[7] + " degrees Celcius\n" +
+	"September: " + monthArray[8] + " degrees Celcius\n" +
+	"October: " + monthArray[9] + " degrees Celcius\n" +
+	"November: " + monthArray[10] + " degrees Celcius\n" +
+	"December: " + monthArray[11] + " degrees Celcius\n");
 	return countryInfoItem;
 }
 }
