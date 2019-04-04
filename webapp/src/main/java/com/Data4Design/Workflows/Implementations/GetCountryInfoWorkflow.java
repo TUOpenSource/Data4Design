@@ -31,7 +31,7 @@ public class GetCountryInfoWorkflow implements IGetCountryInfoWorkflow {
 	
 	private Collection<CountryInfoItem> GetCountryInfoItems(Country thisCountry){
 		return  iCountryInfoItemServices
-				.stream()
+				.parallelStream()
 				.map(iCountryInfoItemService -> iCountryInfoItemService.GetCountryInfoItem(thisCountry))
 				.filter(countryInfoItem -> countryInfoItem != null)
 				.collect(Collectors.toList());

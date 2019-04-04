@@ -31,11 +31,11 @@ public class CountryLookupController {
     	String str_id = String.valueOf(id);
     	CountryInfo countryInfo = new CountryInfo();
 		Country thisCountry = new Country(str_id);
-
-    	iCountryInfoItemServices.add(new MonthlyPrecipitationServiceCountryInfoItem());
+		
+		iCountryInfoItemServices.add(new AnnualPrecipitationServiceCountryInfoItem());
+		iCountryInfoItemServices.add(new AnnualTemperatureServiceCountryInfoItem());
 		iCountryInfoItemServices.add(new MonthlyTemperatureServiceCountryInfoItem());
 		iCountryInfoItemServices.add(new MonthlyPrecipitationServiceCountryInfoItem());
-		iCountryInfoItemServices.add(new MonthlyTemperatureServiceCountryInfoItem());
     	iCountryInfoItemServices.add(new CellPenetrationServiceCountryInfoItem());
     	iCountryInfoItemServices.add(new CountryPopulationServiceCountryInfoItem());
     	iCountryInfoItemServices.add(new ElectricityUsageServiceCountryInfoItem());
@@ -60,12 +60,7 @@ public class CountryLookupController {
     	for(CountryInfoItem c: countryInfo.CountryInfoItems) {
     		model.put(c.Title, c.Value);
     	}
-    	
-    	model.put("country_code", thisCountry.iso_2_str);
-    	model.put("country_code_3", thisCountry.iso_3_str);
-    	model.put("country_name", thisCountry.countryName);
 		
-
         return "country_page";
      }
 }
