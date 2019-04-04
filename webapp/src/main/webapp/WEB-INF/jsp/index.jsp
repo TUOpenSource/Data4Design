@@ -104,14 +104,6 @@
     </div>
   </nav>
 
-  <!-- Video Header -->
-  <!-- <div class="header-container">
-    <div class="video-container">
-      <video id="header_video" preload="true" loop="loop" autoplay="autoplay" volume="0"
-        poster="/media/pictures/header_picture2.jpg">
-        <source src="/media/video/header_video2.mp4" type="video/mp4">
-      </video>
-    </div> -->
   <!-- Page Content -->
   <div class="container">
     <div style="padding-top: 10%">
@@ -148,7 +140,7 @@
 
     //Get Countries
     var countryArray = JSON.parse('${country_list}');
-    console.log(countryArray);
+    // console.log(countryArray);
 
     var sortable = [];
     $.each(countryArray, function (key, value) {

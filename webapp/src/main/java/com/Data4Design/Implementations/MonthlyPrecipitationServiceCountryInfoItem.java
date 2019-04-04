@@ -9,8 +9,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import java.util.Arrays;
-
 
 import org.json.simple.parser.JSONParser;
 import org.json.simple.JSONObject;
@@ -70,18 +68,18 @@ public class MonthlyPrecipitationServiceCountryInfoItem implements ICountryInfoI
 				countryInfoItem.setTitle("monthly_rainfall");
 				//String str = DecimalFormat.getNumberInstance().format(rainfall);
 				//str = new DecimalFormat("#.0#").format(rainfall);
-				countryInfoItem.setValue("\nJanuary: " + monthArray[0] + " mm\n" +
-        "February: " + monthArray[1] + " mm\n" +
-        "March: " + monthArray[2] + " mm\n" +
-        "April: " + monthArray[3] + " mm\n" +
-        "May: " + monthArray[4] + " mm\n" +
-        "June: " + monthArray[5] + " mm\n" +
-        "July: " + monthArray[6] + " mm\n" +
-        "August: " + monthArray[7] + " mm\n" +
-        "September: " + monthArray[8] + " mm\n" +
-        "October: " + monthArray[9] + " mm\n" +
-        "November: " + monthArray[10] + " mm\n" +
-        "December: " + monthArray[11] + " mm\n");
+				countryInfoItem.setValue("{January: " + monthArray[0]  +
+				"February: " + monthArray[1] +
+				"March: " + monthArray[2] +
+				"April: " + monthArray[3] +
+				"May: " + monthArray[4] +
+				"June: " + monthArray[5] +
+				"July: " + monthArray[6] +
+				"August: " + monthArray[7] +
+				"September: " + monthArray[8] +
+				"October: " + monthArray[9] +
+				"November: " + monthArray[10] +
+				"December: " + monthArray[11] + "}");
 				return countryInfoItem;
 	}
 }

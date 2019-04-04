@@ -31,7 +31,7 @@ public class CountryLookupController {
     	String str_id = String.valueOf(id);
     	CountryInfo countryInfo = new CountryInfo();
 		Country thisCountry = new Country(str_id);
-		
+
 		iCountryInfoItemServices.add(new AnnualPrecipitationServiceCountryInfoItem());
 		iCountryInfoItemServices.add(new AnnualTemperatureServiceCountryInfoItem());
 		iCountryInfoItemServices.add(new MonthlyTemperatureServiceCountryInfoItem());

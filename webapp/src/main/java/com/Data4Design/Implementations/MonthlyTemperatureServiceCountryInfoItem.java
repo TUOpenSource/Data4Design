@@ -9,8 +9,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import java.util.Arrays;
-
 import org.json.simple.parser.JSONParser;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONArray;
@@ -67,21 +65,21 @@ public class MonthlyTemperatureServiceCountryInfoItem implements ICountryInfoIte
 
 	//System.out.println(Arrays.toString(monthArray));
 	CountryInfoItem countryInfoItem = new CountryInfoItem();
-	countryInfoItem.setTitle("monthly_temp");
+	countryInfoItem.setTitle("monthly_temperature");
 	//String str = DecimalFormat.getNumberInstance().format(temp);
 	//str = new DecimalFormat("#.0#").format(temp);
-	countryInfoItem.setValue("\nJanuary: " + monthArray[0] + " degrees Celcius\n" +
-	"February: " + monthArray[1] + " degrees Celcius\n" +
-	"March: " + monthArray[2] + " degrees Celcius\n" +
-	"April: " + monthArray[3] + " degrees Celcius\n" +
-	"May: " + monthArray[4] + " degrees Celcius\n" +
-	"June: " + monthArray[5] + " degrees Celcius\n" +
-	"July: " + monthArray[6] + " degrees Celcius\n" +
-	"August: " + monthArray[7] + " degrees Celcius\n" +
-	"September: " + monthArray[8] + " degrees Celcius\n" +
-	"October: " + monthArray[9] + " degrees Celcius\n" +
-	"November: " + monthArray[10] + " degrees Celcius\n" +
-	"December: " + monthArray[11] + " degrees Celcius\n");
+	countryInfoItem.setValue("{January: " + monthArray[0]  +
+	"February: " + monthArray[1] +
+	"March: " + monthArray[2] +
+	"April: " + monthArray[3] +
+	"May: " + monthArray[4] +
+	"June: " + monthArray[5] +
+	"July: " + monthArray[6] +
+	"August: " + monthArray[7] +
+	"September: " + monthArray[8] +
+	"October: " + monthArray[9] +
+	"November: " + monthArray[10] +
+	"December: " + monthArray[11] + "}");
 	return countryInfoItem;
 }
 }
