@@ -33,10 +33,11 @@ public class CountryLookupController {
     	CountryInfo countryInfo = new CountryInfo();
 		Country thisCountry = new Country(str_id);
 
-    	iCountryInfoItemServices.add(new MonthlyPrecipitationServiceCountryInfoItem());
+
+		iCountryInfoItemServices.add(new AnnualPrecipitationServiceCountryInfoItem());
+		iCountryInfoItemServices.add(new AnnualTemperatureServiceCountryInfoItem());
 		iCountryInfoItemServices.add(new MonthlyTemperatureServiceCountryInfoItem());
 		iCountryInfoItemServices.add(new MonthlyPrecipitationServiceCountryInfoItem());
-		iCountryInfoItemServices.add(new MonthlyTemperatureServiceCountryInfoItem());
     	iCountryInfoItemServices.add(new CellPenetrationServiceCountryInfoItem());
     	iCountryInfoItemServices.add(new CountryPopulationServiceCountryInfoItem());
     	iCountryInfoItemServices.add(new ElectricityUsageServiceCountryInfoItem());
