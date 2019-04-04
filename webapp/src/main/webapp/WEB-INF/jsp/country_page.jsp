@@ -67,15 +67,8 @@
 
   <!-- Page Content -->
   <div class="container" style="padding-top: 70px; padding-bottom: 15px">
-
-
-
+    
     <div class="row">
-      <!-- <div class="col-md-4 order-md-12" style="text-align: right; margin: auto">
-        <select id="country_select" onchange="redirect(this);">
-          <option value="" selected disabled hidden>Please select a country</option>
-        </select>
-      </div> -->
       <!-- Country Name -->
       <div style="display:block" class="header col-md-8 order-md-1">
         <span>
@@ -94,21 +87,6 @@
 
     </div>
     <!-- /.row -->
-
-    <!-- <div class="row">
-      <h3 class="col-sm-12">Population Data</h3>
-      <ul>
-        <li>
-          <h5><i class="fas fa-users"></i> Population: ${population}</h5>
-        </li>
-        <li>
-          <h5><i class="fas fa-mobile-alt"></i> Mobile Phone Penetration: ${cell_penetration}%</h5>
-        </li>
-        <li>
-          <h5 class="card-title"><i class="fas fa-bolt"></i> Electricity Penetration: ${electricity_usage}%</h5>
-        </li>
-      </ul>
-    </div> -->
 
     <div class="row">
       <div class="col-md-6">
@@ -169,73 +147,6 @@
       </div>
 
     </div>
-    <!-- Statisitacal Information -->
-
-    <!-- First Data Row -->
-    <!-- <div class="row">
-
-      <div class="col-md-3 col-sm-6 mb-4">
-        <div id="population-card" class="card">
-          <div class="card-body">
-            <h5 class="card-title"><i class="fas fa-users"></i> Population </h5>
-            <p class="card-text">Country Wide Population: ${population}</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 col-sm-6 mb-4">
-        <div id="cell-usage-card" class="card">
-          <div class="card-body">
-            <h5 class="card-title"><i class="fas fa-mobile-alt"></i> Mobile Phone Usage</h5>
-            <p class="card-text">${cell_penetration} cell phones per 100 people</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 col-sm-6 mb-4">
-        <div id="electricity-usage-card" class="card">
-          <div class="card-body">
-            <h5 class="card-title"><i class="fas fa-tint"></i> Average monthly Rainfall</h5>
-            <p class="card-text">${monthly_rainfall}</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 col-sm-6 mb-4">
-        <div id="electricity-usage-card" class="card">
-          <div class="card-body">
-            <h5 class="card-title"><i class="fas fa-bolt"></i> Electricity Usage</h5>
-            <p class="card-text">Country Wide Average: ${electricity_usage}%</p>
-          </div>
-        </div>
-      </div>
-
-
-    </div> -->
-    <!-- /.row -->
-
-    <!-- First Data Row -->
-    <!-- <div class="row">
-
-      <div class="col-md-3 col-sm-6 mb-4">
-        <div id="monthly-temperature-card" class="card">
-          <div class="card-body">
-            <h5 class="card-title"><i class="fas fa-thermometer-half"></i> Average monthly Temperature </h5>
-            <p class="card-text">${monthly_temperature}</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 col-sm-6 mb-4">
-        <div id="natural-resources-card" class="card">
-          <div class="card-body">
-            <h5 class="card-title"><i class="fas fa-tree"></i> Natural Resources</h5>
-            <p class="card-text">${natural_resources}</p>
-          </div>
-        </div>
-      </div>
-
-    </div> -->
     <!-- /.row -->
     <!-- /.container -->
   </div>
@@ -269,13 +180,6 @@
         console.log('Geocode was not successful for the following reason: ' + status);
       }
     });
-
-    // //One of these worked not sure which
-    // $('#header_video').volume = 0;
-    // document.getElementsByTagName('video')[0].volume = 0;
-    // $("video").prop("volume", 0);
-
-    //console.log($('#header_video').volume);
 
     //Get Countries
     var countryArray = JSON.parse('${country_list}');
