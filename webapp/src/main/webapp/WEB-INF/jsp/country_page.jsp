@@ -55,10 +55,15 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="http://localhost:8080">Home
               <span class="sr-only">(current)</span>
             </a>
+          </li>
+          <li class="nav-item">
+            <select id="country_select" onchange="redirect(this);">
+              <option value="" selected disabled hidden>Please select a country</option>
+            </select>
           </li>
         </ul>
       </div>
@@ -183,7 +188,6 @@
 
     //Get Countries
     var countryArray = JSON.parse('${country_list}');
-    console.log(countryArray);
 
     var sortable = [];
     $.each(countryArray, function (key, value) {
