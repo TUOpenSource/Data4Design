@@ -13,10 +13,16 @@ To begin, simply clone the repository.
 
 ``` git clone  https://github.com/TUOpenSource/Data4Design.git```
 
-The service is locally hosted with Apache Tomcat, so ensure Tomcat is downloaded, but do not run the service. This is handled automatically when the application builds. 
+A Google Maps API key is required, with both the javascript and geocoder APIs activated. Either obtain your own API key here:
+
+```https://developers.google.com/maps/documentation/javascript/tutorial```
+
+or contact a contributor for the API key. The key MUST be stored in a system environment variable named "GoogleMapsAPI".
+
+The service is locally hosted with Apache Tomcat, so ensure Tomcat is downloaded and installed, but do not run the service. This is handled automatically when the application builds. 
 
 Next, make sure Maven is downloaded (Java 1.8.XX is required), navigate to the "webapp" directory (should contain the "pom.xml" file) and then run this command:
 ``` mvn spring-boot:run ```
 
-The application will build, automatically initiates Tomcat, and begin serving. 
+The application will build, automatically initiate Tomcat, and begin serving. 
 ```Navigate to http://localhost:8080```
