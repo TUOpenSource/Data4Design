@@ -148,7 +148,6 @@
 
     //Get Countries
     var countryArray = JSON.parse('${country_list}');
-    console.log(countryArray);
 
     var sortable = [];
     $.each(countryArray, function (key, value) {
