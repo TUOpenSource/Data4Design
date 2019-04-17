@@ -23,6 +23,7 @@
 
   <script src="/js/node_modules/jquery/dist/jquery.min.js"></script>
   <script src="/js/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/js/mdb.min.js"></script>
   <script src="${map}" async defer></script>
   <!--<link href="/js/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />-->
   <link rel="icon" href="../../../../favicon.ico">
@@ -72,7 +73,7 @@
 
   <!-- Page Content -->
   <div class="container" style="padding-top: 70px; padding-bottom: 15px">
-    
+
     <div class="row">
       <!-- Country Name -->
       <div style="display:block" class="header col-md-8 order-md-1">
@@ -152,6 +153,18 @@
       </div>
 
     </div>
+
+    <div class="row">
+
+      <div class="col-md-6">
+        <canvas id="monthlyTemperatureChart"></canvas>
+      </div>
+
+      <div class="col-md-6">
+        <canvas id="monthlyRainfallChart"></canvas>
+      </div>
+
+    </div>
     <!-- /.row -->
     <!-- /.container -->
   </div>
@@ -212,4 +225,79 @@
     var selection = $('#country_select').val();
     window.location.replace("/country/" + selection);
   }
+
+  var monthlyTemperatureObject = ${monthly_temperature};
+  var monthlyRainfallObject = ${monthly_rainfall};
+
+  var tempChart = document.getElementById("monthlyTemperatureChart").getContext('2d');
+  var myLineChart = new Chart(tempChart, {
+    type: 'line',
+    data: {
+      labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+      datasets: [{
+        label: "Temperature (C)",
+        data: [
+          monthlyTemperatureObject.January,
+          monthlyTemperatureObject.February,
+          monthlyTemperatureObject.March,
+          monthlyTemperatureObject.April,
+          monthlyTemperatureObject.May,
+          monthlyTemperatureObject.June,
+          monthlyTemperatureObject.July,
+          monthlyTemperatureObject.August,
+          monthlyTemperatureObject.September,
+          monthlyTemperatureObject.October,
+          monthlyTemperatureObject.November,
+          monthlyTemperatureObject.December,
+        ],
+        backgroundColor: [
+          'rgba(105, 0, 132, .2)',
+        ],
+        borderColor: [
+          'rgba(200, 99, 132, .7)',
+        ],
+        borderWidth: 2
+      },
+      ]
+    },
+    options: {
+      responsive: true
+    }
+  });
+
+  var rainChart = document.getElementById("monthlyRainfallChart").getContext('2d');
+  var myLineChart = new Chart(rainChart, {
+    type: 'line',
+    data: {
+      labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+      datasets: [{
+        label: "Rainfall (mm)",
+        data: [
+          monthlyRainfallObject.January,
+          monthlyRainfallObject.February,
+          monthlyRainfallObject.March,
+          monthlyRainfallObject.April,
+          monthlyRainfallObject.May,
+          monthlyRainfallObject.June,
+          monthlyRainfallObject.July,
+          monthlyRainfallObject.August,
+          monthlyRainfallObject.September,
+          monthlyRainfallObject.October,
+          monthlyRainfallObject.November,
+          monthlyRainfallObject.December,
+        ],
+        backgroundColor: [
+          'rgba(0, 137, 132, .2)',
+        ],
+        borderColor: [
+          'rgba(0, 10, 130, .7)',
+        ],
+        borderWidth: 2
+      },
+      ]
+    },
+    options: {
+      responsive: true
+    }
+  });
 </script>

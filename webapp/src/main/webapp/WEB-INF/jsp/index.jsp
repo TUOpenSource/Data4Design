@@ -11,15 +11,6 @@
     padding: 20px;
   }
 
-  .video-container {
-    top: 0%;
-    left: 0%;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    overflow: hidden;
-  }
-
   .select-container {
     text-align: center;
     margin-right: auto;
@@ -48,13 +39,6 @@
 
   }
 
-  video {
-    position: absolute;
-    z-index: -1;
-    opacity: 0.78;
-    width: 100%;
-  }
-
   .select-title {
     color: #ffffff;
   }
@@ -72,12 +56,14 @@
   <!--<link href="/js/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />-->
   <link rel="icon" href="../../../../favicon.ico">
 
-
   <!-- Custom styles for this template -->
-  <link href="/css/startbootstrap-portfolio-item-gh-pages/css/portfolio-item.css" rel="stylesheet">
+  <!-- <link href="/css/startbootstrap-portfolio-item-gh-pages/css/portfolio-item.css" rel="stylesheet"> -->
 
   <!-- Bootswatch for color -->
   <link href="/js/node_modules/bootswatch/dist/yeti/bootstrap.min.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/1.2.1/typeahead.jquery.min.js"></script>
+
 
   <title>Hardware Human-Centered Design</title>
 
@@ -109,16 +95,20 @@
     <div style="padding-top: 10%">
       <div style="text-align: center">
         <h1>Data4Design</h1>
-        <h3>The goal of <i>Data4Design</i> is to provide you with resources to jump start your humanitarian project.</h3>
+        <h3>The goal of <i>Data4Design</i> is to provide you with resources to jump start your humanitarian project.
+        </h3>
         <br>
         <h5 class="select-title" style="color:black; text-align: center">To get started, please select a country for
           your project</h5>
       </div>
       <div style="text-align: center; margin: auto">
-        <select id="country_select"
-          onchange="redirect(this);">
+        <select id="country_select" onchange="redirect(this);">
           <option value="" selected disabled hidden>Please select a country</option>
         </select>
+        <div id="typeahead-country-selector">
+          <input class="typeahead" type="text" placeholder="ex: 'Uruguay'">
+          <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
+        </div>
       </div>
     </div>
   </div>
@@ -129,18 +119,13 @@
 
 </html>
 <script>
+
+  var arrayOfCountries = [];
+
   $(document).ready(function () {
-
-    // //One of these worked not sure which
-    // $('#header_video').volume = 0;
-    // document.getElementsByTagName('video')[0].volume = 0;
-    // $("video").prop("volume", 0);
-
-    //console.log($('#header_video').volume);
 
     //Get Countries
     var countryArray = JSON.parse('${country_list}');
-
 
     var sortable = [];
     $.each(countryArray, function (key, value) {
@@ -155,7 +140,11 @@
       key = sortable[i].key;
       value = sortable[i].value;
       $('#country_select').append("<option value=\"" + key + "\"><a href=\"/country/" + key + "\">" + value + "</a></option>");
+
+      arrayOfCountries.push(value);
     }
+
+
 
   });
 
@@ -165,4 +154,36 @@
     var selection = $('#country_select').val();
     window.location.replace("/country/" + selection);
   }
+
+  var substringMatcher = function (strs) {
+    return function findMatches(q, cb) {
+      var matches, substringRegex;
+
+      // an array that will be populated with substring matches
+      matches = [];
+
+      // regex used to determine if a string contains the substring `q`
+      substrRegex = new RegExp(q, 'i');
+
+      // iterate through the pool of strings and for any string that
+      // contains the substring `q`, add it to the `matches` array
+      $.each(strs, function (i, str) {
+        if (substrRegex.test(str)) {
+          matches.push(str);
+        }
+      });
+
+      cb(matches);
+    };
+  };
+
+  $('#typeahead-country-selector .typeahead').typeahead({
+    hint: true,
+    highlight: true,
+    minLength: 1
+  },
+    {
+      name: 'arrayOfCountries',
+      source: substringMatcher(arrayOfCountries)
+    });
 </script>

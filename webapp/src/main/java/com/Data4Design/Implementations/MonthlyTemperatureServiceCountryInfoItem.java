@@ -68,18 +68,18 @@ public class MonthlyTemperatureServiceCountryInfoItem implements ICountryInfoIte
 	countryInfoItem.setTitle("monthly_temperature");
 	//String str = DecimalFormat.getNumberInstance().format(temp);
 	//str = new DecimalFormat("#.0#").format(temp);
-	countryInfoItem.setValue("{\"January\":" + "\""+monthArray[0]+"\""  +
-	"\"February:\"" + "\""+monthArray[1]+"\"" +
-	"\"March:\"" + "\""+monthArray[2]+"\"" +
-	"\"April:\"" + "\""+monthArray[3]+"\"" +
-	"\"May:\"" + "\""+monthArray[4]+"\"" +
-	"\"June:\"" + "\""+monthArray[5]+"\"" +
-	"\"July:\"" + "\""+monthArray[6]+"\"" +
-	"\"August:\"" + "\""+monthArray[7]+"\"" +
-	"\"September:\"" + "\""+monthArray[8]+"\"" +
-	"\"October:\"" + "\""+monthArray[9]+"\"" +
-	"\"November:\"" + "\""+monthArray[10]+"\"" +
-	"\"December:\"" + "\""+monthArray[11]+"\"" + "}");
+	countryInfoItem.setValue("{\"January\":" + monthArray[0]+","  +
+	"\"February\":" + monthArray[1]+"," +
+	"\"March\":" + monthArray[2]+"," +
+	"\"April\":" + monthArray[3]+"," +
+	"\"May\":" + monthArray[4]+"," +
+	"\"June\":" + monthArray[5]+"," +
+	"\"July\":" + monthArray[6]+"," +
+	"\"August\":" + monthArray[7]+"," +
+	"\"September\":" + monthArray[8]+"," +
+	"\"October\":" + monthArray[9]+"," +
+	"\"November\":" + monthArray[10]+"," +
+	"\"December\":" + monthArray[11]+"}");
 	return countryInfoItem;
 }
 }
