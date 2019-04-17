@@ -24,13 +24,10 @@
   <script src="/js/node_modules/jquery/dist/jquery.min.js"></script>
   <script src="/js/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="/js/mdb.min.js"></script>
+  <script src="/js/typeahead.bundle.min.js"></script>
   <script src="${map}" async defer></script>
   <!--<link href="/js/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />-->
   <link rel="icon" href="../../../../favicon.ico">
-
-
-  <!-- Custom styles for this template -->
-  <link href="/css/startbootstrap-portfolio-item-gh-pages/css/portfolio-item.css" rel="stylesheet">
 
   <!-- Bootswatch for color -->
   <link href="/js/node_modules/bootswatch/dist/yeti/bootstrap.min.css" rel="stylesheet">
@@ -38,6 +35,8 @@
   <!-- Font Awesome Glyphs -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+  <link href="/css/typeahead-sample.css" rel="stylesheet">
 
   <title>HHCD - ${country_name}</title>
 
@@ -57,14 +56,17 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
+            <span id="typeahead-country-selector">
+              <input id="searchField" class="typeahead form-control" type="text" placeholder="ex: 'Uruguay'">
+              <button id="searchButton" class="btn-md btn-success">Search</button>
+            </span>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="http://localhost:8080">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <select id="country_select" onchange="redirect(this);">
-              <option value="" selected disabled hidden>Please select a country</option>
-            </select>
           </li>
         </ul>
       </div>
@@ -183,6 +185,9 @@
     });
     geocoder = new google.maps.Geocoder();
   }
+  //Get Countries
+  var countryArray = JSON.parse('${country_list}');
+  var arrayOfCountries = [];
   $(document).ready(function () {
 
     initMap();
@@ -199,9 +204,6 @@
       }
     });
 
-    //Get Countries
-    var countryArray = JSON.parse('${country_list}');
-
     var sortable = [];
     $.each(countryArray, function (key, value) {
       sortable.push({ key, value });
@@ -215,9 +217,61 @@
       key = sortable[i].key;
       value = sortable[i].value;
       $('#country_select').append("<option value=\"" + key + "\"><a href=\"/country/" + key + "\">" + value + "</a></option>");
+
+      arrayOfCountries.push(value);
     }
 
+    var ret = {};
+    for (var key in countryArray) {
+      ret[countryArray[key]] = key;
+    }
+    countryArray = ret;
+
   });
+
+  $("#searchButton").click(function () {
+    var country = $("#searchField").val();
+    var code = countryArray[country];
+    
+    if (code == null) {
+      window.alert("Please select a valid country");
+    } else {
+      console.log(code);
+      window.location.replace("/country/" + code);
+    }
+  });
+
+  var substringMatcher = function (strs) {
+    return function findMatches(q, cb) {
+      var matches, substringRegex;
+
+      // an array that will be populated with substring matches
+      matches = [];
+
+      // regex used to determine if a string contains the substring `q`
+      substrRegex = new RegExp(q, 'i');
+
+      // iterate through the pool of strings and for any string that
+      // contains the substring `q`, add it to the `matches` array
+      $.each(strs, function (i, str) {
+        if (substrRegex.test(str)) {
+          matches.push(str);
+        }
+      });
+
+      cb(matches);
+    };
+  };
+
+  $('#typeahead-country-selector .typeahead').typeahead({
+    hint: true,
+    highlight: true,
+    minLength: 1
+  },
+    {
+      name: 'arrayOfCountries',
+      source: substringMatcher(arrayOfCountries)
+    });
 
 
   function redirect(sel) {
@@ -226,8 +280,8 @@
     window.location.replace("/country/" + selection);
   }
 
-  var monthlyTemperatureObject = ${monthly_temperature};
-  var monthlyRainfallObject = ${monthly_rainfall};
+  var monthlyTemperatureObject = ${ monthly_temperature };
+  var monthlyRainfallObject = ${ monthly_rainfall };
 
   var tempChart = document.getElementById("monthlyTemperatureChart").getContext('2d');
   var myLineChart = new Chart(tempChart, {

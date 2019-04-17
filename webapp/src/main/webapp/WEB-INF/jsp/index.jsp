@@ -53,6 +53,9 @@
 
   <script src="/js/node_modules/jquery/dist/jquery.min.js"></script>
   <script src="/js/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/js/typeahead.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <!--<link href="/js/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />-->
   <link rel="icon" href="../../../../favicon.ico">
 
@@ -61,8 +64,9 @@
 
   <!-- Bootswatch for color -->
   <link href="/js/node_modules/bootswatch/dist/yeti/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/typeahead-sample.css" rel="stylesheet">
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/1.2.1/typeahead.jquery.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/1.2.1/typeahead.jquery.min.js"></script> -->
 
 
   <title>Hardware Human-Centered Design</title>
@@ -102,17 +106,16 @@
           your project</h5>
       </div>
       <div style="text-align: center; margin: auto">
-        <select id="country_select" onchange="redirect(this);">
+        <!-- <select id="country_select" onchange="redirect(this);">
           <option value="" selected disabled hidden>Please select a country</option>
-        </select>
+        </select> -->
         <div id="typeahead-country-selector">
-          <input class="typeahead" type="text" placeholder="ex: 'Uruguay'">
-          <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
+          <input id="searchField" class="typeahead form-control" type="text" placeholder="ex: 'Uruguay'">
+          <button id="searchButton" class="btn-md btn-success">Search</button>
         </div>
       </div>
     </div>
   </div>
-
 
   <script type="text/javascript" src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
@@ -120,13 +123,12 @@
 </html>
 <script>
 
+  var countryArray = JSON.parse('${country_list}');
   var arrayOfCountries = [];
 
   $(document).ready(function () {
 
     //Get Countries
-    var countryArray = JSON.parse('${country_list}');
-
     var sortable = [];
     $.each(countryArray, function (key, value) {
       sortable.push({ key, value });
@@ -144,7 +146,11 @@
       arrayOfCountries.push(value);
     }
 
-
+    var ret = {};
+    for (var key in countryArray) {
+      ret[countryArray[key]] = key;
+    }
+    countryArray = ret;
 
   });
 
@@ -154,6 +160,18 @@
     var selection = $('#country_select').val();
     window.location.replace("/country/" + selection);
   }
+
+  $("#searchButton").click(function () {
+    var country = $("#searchField").val();
+    var code = countryArray[country];
+
+    if (code == null) {
+      window.alert("Please select a valid country");
+    } else {
+      console.log(code);
+      window.location.replace("/country/" + code);
+    }
+  });
 
   var substringMatcher = function (strs) {
     return function findMatches(q, cb) {
